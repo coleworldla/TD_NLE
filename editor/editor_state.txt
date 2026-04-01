@@ -1,0 +1,14 @@
+key	value
+pixels_per_frame	2.0
+view_start_frame	0
+view_end_frame	900
+selected_clip_ids	[]
+selected_note_ids	[]
+selected_automation_ids	[]
+drag_mode	none
+selection_mode	replace
+playhead_frame	0
+hover_frame	-1
+hover_track	-1
+hover_clip_id	
+ui_focus	none

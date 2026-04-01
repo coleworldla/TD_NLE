@@ -1,0 +1,8 @@
+node	render_mode	input_contract	notes
+transport_bar	native_panel	ui_theme + material_icons + transport_controls	Use standard TD panels, text, and built-in icon glyphs for dense controls and readouts
+timeline_ruler	glsl_overlay	editor_state + ui_theme + extTransport metrics	Render playhead, tick marks, loop range, and beat bands in a DPI-aware GLSL COMP; interaction stays in Python
+clip_canvas	glsl_overlay	editor_state + clips_table + tracks_table + ui_theme	Render grid, hover, selection, and playhead overlays in a GLSL COMP while callbacks keep mutating DAT-backed state
+note_canvas	native_placeholder	editor_state + notes_table	Defer full GLSL treatment until note editing is implemented
+automation_canvas	native_placeholder	editor_state + automation_table	Defer full GLSL treatment until automation editing is implemented
+inspector	native_panel	ui_theme + material_icons	Use icon-plus-label controls and native field widgets
+media_bin	native_panel	ui_theme + material_icons	Use native list/grid controls; only revisit GLSL if browsing density becomes a real blocker

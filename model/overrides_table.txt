@@ -1,0 +1,1 @@
+id	clip_id	par_name	par_value	par_type

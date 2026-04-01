@@ -1,0 +1,6 @@
+key	value
+project_name	untitled
+version	1
+export_path
+template_root
+last_saved

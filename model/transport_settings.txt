@@ -1,0 +1,11 @@
+key	value
+clock_source	internal
+fps	30
+tc_offset	00:00:00:00
+bpm	120
+signature_num	4
+signature_den	4
+loop_start_frame	0
+loop_end_frame	900
+loop_enabled	0
+external_seconds_offset	0.0

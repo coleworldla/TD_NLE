@@ -1,0 +1,11 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# TouchDesigner backups (keep main .toe, skip auto-backups)
+project_files/Backup/
+
+# Temp files
+*.tmp
+*.log

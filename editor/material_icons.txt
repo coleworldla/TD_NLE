@@ -1,0 +1,19 @@
+semantic	icon_name	label	usage
+play	play	Play	Transport toggle
+pause	pause	Pause	Transport toggle
+stop	stop	Stop	Transport stop
+record	record	Record	Record arm / review capture
+zoom_in	magnify-plus	Zoom In	Viewport control
+zoom_out	magnify-minus	Zoom Out	Viewport control
+home_fit	fit-to-page	Home	Frame full clip extent
+loop	repeat	Loop	Loop enable / disable
+clock_internal	clock-outline	Internal	Clock source selector
+clock_external	access-point	External	Clock source selector
+clock_timecode	timeline-clock	Timecode	Clock source selector
+ingest	folder-plus	Ingest	Media add/import affordance
+mute	volume-off	Mute	Track header toggle
+solo	music-note-eighth	Solo	Track header toggle
+select	cursor-default-click	Select	Selection mode affordance
+marquee	selection-drag	Marquee	Box-select affordance
+inspect	tune	Inspector	Inspector affordance
+media	filmstrip-box-multiple	Media Bin	Media bin affordance

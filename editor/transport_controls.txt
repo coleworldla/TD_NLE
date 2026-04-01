@@ -1,0 +1,14 @@
+order	group	action	icon_semantic	label	control_type	notes
+10	transport	play_toggle	play	Play	button	Toggle playback using extTransport.Play/Pause
+20	transport	stop	stop	Stop	button	Stop transport and keep editor state in sync
+30	record	record_toggle	record	Record	button	Toggle recorder using current or review mode
+40	viewport	zoom_out	zoom_out	Zoom Out	button	Zoom around viewport center
+50	viewport	zoom_in	zoom_in	Zoom In	button	Zoom around viewport center
+60	viewport	home_to_fit	home_fit	Home	button	Frame the clip extent in the current view
+70	loop	loop_toggle	loop	Loop	button	Toggle loop state using transport loop range
+80	clock	clock_internal	clock_internal	Internal	button	Set clock source to internal
+90	clock	clock_external	clock_external	External	button	Set clock source to external seconds
+100	clock	clock_timecode	clock_timecode	Timecode	button	Set clock source to timecode
+110	record	set_mode_review	record	Review	mode	Set recorder mode to review
+120	record	set_mode_master	record	Master	mode	Set recorder mode to master
+130	record	set_mode_sequence	record	Sequence	mode	Set recorder mode to sequence

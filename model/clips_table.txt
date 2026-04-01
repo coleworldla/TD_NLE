@@ -1,0 +1,1 @@
+id	track	template_path	shell_type	subcomp	start_frame	duration_frames	start_tc	end_tc	in_offset	out_offset	opacity	blend_mode	transition_in	transition_out	preroll_frames	enabled	overrides_json	media_type	source_in	source_out	fps	preset_name

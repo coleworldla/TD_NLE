@@ -1,0 +1,24 @@
+key	value	role
+font_family	Segoe UI	Primary UI font family
+font_family_alt	Avenir Next	Secondary UI font family
+workspace_bg	0.11 0.12 0.14	Editor shell background
+workspace_panel	0.15 0.16 0.19	Primary panel fill
+workspace_panel_alt	0.18 0.19 0.22	Secondary panel fill
+workspace_edge	0.28 0.30 0.35	Panel borders and dividers
+text_primary	0.94 0.95 0.97	Primary text
+text_muted	0.63 0.67 0.73	Muted text
+accent	0.15 0.63 0.95	Primary active accent
+accent_warm	0.96 0.55 0.24	Warm accent for highlights
+record	0.92 0.23 0.19	Record arm and live record state
+selection	0.25 0.72 1.0	Selection stroke/fill accent
+playhead	1.00 0.80 0.18	Playhead line and active locator
+grid_major	0.34 0.37 0.44	Major ruler/grid line
+grid_minor	0.22 0.24 0.29	Minor ruler/grid line
+hover_fill	0.96 0.97 1.00 0.08	Hover overlay tint
+shadow	0.00 0.00 0.00 0.24	Soft shadow / depth cue
+corner_radius	8	Primary panel corner radius in px
+panel_padding	12	Standard panel inner padding in px
+control_height	30	Standard button/input height in px
+icon_size	18	Default icon size in px
+timeline_strip_height	40	Preferred ruler strip height in px
+track_header_width	180	Preferred track header width in px

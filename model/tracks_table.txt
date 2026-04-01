@@ -1,0 +1,5 @@
+track	type	name	mute	solo	color	height
+0	video	Track 1	0	0	0.2 0.4 0.8	80
+1	video	Track 2	0	0	0.8 0.3 0.2	80
+2	video	Track 3	0	0	0.3 0.8 0.3	80
+3	video	Track 4	0	0	0.7 0.5 0.2	80
