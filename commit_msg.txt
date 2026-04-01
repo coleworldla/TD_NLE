@@ -1,9 +1,0 @@
-Initial commit: TD_NLE TouchDesigner-native modular NLE
-
-Fixed-shell player architecture (scene3d/scene2d/fx/video/audio), DAT-table
-EDL, 6 Python extensions (extTransport, extSequencer, extPlayerPool,
-extAnalysis, extRecorder, extIngest), drag-and-drop media ingest, nondestructive
-clip trimming, TDMorph preset sequencing, EssentiaTD audio analysis, and full
-editor UI layer (viewport, ruler, selection, transport bar).
-
-Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
