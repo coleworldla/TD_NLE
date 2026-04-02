@@ -24,7 +24,6 @@
       --sans: "Segoe UI", "Avenir Next", "Gill Sans", "Trebuchet MS", sans-serif;
       --serif: "Georgia", "Iowan Old Style", serif;
     }
-
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
@@ -32,23 +31,17 @@
       font-family: var(--sans);
       color: var(--ink);
       background:
-        radial-gradient(circle at top left, rgba(18, 106, 90, 0.10), transparent 28%),
-        radial-gradient(circle at top right, rgba(154, 74, 16, 0.08), transparent 25%),
+        radial-gradient(circle at top left, rgba(18,106,90,0.10), transparent 28%),
+        radial-gradient(circle at top right, rgba(154,74,16,0.08), transparent 25%),
         linear-gradient(180deg, #f7f4ee 0%, #efe9df 100%);
       line-height: 1.6;
     }
-
     a { color: var(--accent); }
     code, pre { font-family: var(--mono); }
-
-    .page {
-      max-width: 1480px;
-      margin: 0 auto;
-      padding: 24px;
-    }
+    .page { max-width: 1480px; margin: 0 auto; padding: 24px; }
 
     .hero {
-      background: linear-gradient(135deg, rgba(18, 106, 90, 0.95), rgba(26, 78, 69, 0.92));
+      background: linear-gradient(135deg, rgba(18,106,90,0.95), rgba(26,78,69,0.92));
       color: #f6fbf9;
       border-radius: 28px;
       box-shadow: var(--shadow);
@@ -56,294 +49,112 @@
       position: relative;
       overflow: hidden;
     }
-
     .hero::after {
       content: "";
       position: absolute;
       inset: auto -80px -100px auto;
-      width: 320px;
-      height: 320px;
+      width: 320px; height: 320px;
       background: radial-gradient(circle, rgba(255,255,255,0.16), transparent 66%);
       transform: rotate(18deg);
     }
-
-    .eyebrow {
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      font-size: 12px;
-      opacity: 0.82;
-      margin-bottom: 8px;
-    }
-
-    h1 {
-      margin: 0;
-      font-family: var(--serif);
-      font-size: clamp(2.3rem, 4vw, 4.2rem);
-      line-height: 1.04;
-    }
-
-    .hero p {
-      max-width: 920px;
-      font-size: 1.05rem;
-      margin: 14px 0 0;
-      color: rgba(246, 251, 249, 0.92);
-    }
-
-    .badge-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 18px 0 0;
-    }
-
+    .eyebrow { letter-spacing: 0.18em; text-transform: uppercase; font-size: 12px; opacity: 0.82; margin-bottom: 8px; }
+    h1 { margin: 0; font-family: var(--serif); font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04; }
+    .hero p { max-width: 920px; font-size: 1.05rem; margin: 14px 0 0; color: rgba(246,251,249,0.92); }
+    .badge-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 0; }
     .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 0.88rem;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      color: #fff;
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 12px; border-radius: 999px; font-size: 0.88rem;
+      background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.18); color: #fff;
     }
 
     .layout {
       display: grid;
       grid-template-columns: 320px minmax(0, 1fr);
-      gap: 24px;
-      margin-top: 24px;
-      align-items: start;
+      gap: 24px; margin-top: 24px; align-items: start;
     }
-
     .toc {
-      position: sticky;
-      top: 18px;
-      background: rgba(255, 253, 248, 0.95);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(217, 208, 195, 0.9);
-      border-radius: 22px;
-      padding: 22px;
-      box-shadow: var(--shadow);
+      position: sticky; top: 18px;
+      background: rgba(255,253,248,0.95); backdrop-filter: blur(12px);
+      border: 1px solid rgba(217,208,195,0.9); border-radius: 22px;
+      padding: 22px; box-shadow: var(--shadow);
     }
+    .toc h2 { margin: 0 0 12px; font-size: 1rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+    .toc ol { margin: 0; padding-left: 20px; }
+    .toc li { margin: 7px 0; color: var(--muted); font-size: 0.93rem; }
+    .toc a { text-decoration: none; color: var(--ink); }
+    .toc a:hover { color: var(--accent); }
+    .toc .sub { padding-left: 16px; margin: 4px 0; }
+    .toc .sub li { margin: 4px 0; font-size: 0.88rem; }
 
-    .toc h2 {
-      margin: 0 0 12px;
-      font-size: 1rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .toc ol {
-      margin: 0;
-      padding-left: 20px;
-    }
-
-    .toc li {
-      margin: 8px 0;
-      color: var(--muted);
-    }
-
-    .toc a {
-      text-decoration: none;
-      color: var(--ink);
-    }
-
-    main {
-      display: grid;
-      gap: 20px;
-    }
-
+    main { display: grid; gap: 20px; }
     section {
-      background: var(--paper);
-      border: 1px solid rgba(217, 208, 195, 0.95);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 28px;
+      background: var(--paper); border: 1px solid rgba(217,208,195,0.95);
+      border-radius: var(--radius); box-shadow: var(--shadow); padding: 28px;
     }
-
-    section h2 {
-      margin: 0 0 14px;
-      font-size: clamp(1.5rem, 2vw, 2rem);
-      font-family: var(--serif);
-    }
-
-    section h3 {
-      margin: 26px 0 10px;
-      font-size: 1.15rem;
-    }
-
-    section h4 {
-      margin: 18px 0 8px;
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--muted);
-    }
-
+    section h2 { margin: 0 0 14px; font-size: clamp(1.5rem, 2vw, 2rem); font-family: var(--serif); }
+    section h3 { margin: 26px 0 10px; font-size: 1.15rem; }
+    section h4 { margin: 18px 0 8px; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
     p, li { color: var(--ink); }
     ul, ol { padding-left: 22px; }
+    .lead { font-size: 1.05rem; color: var(--muted); margin-top: 0; }
 
-    .lead {
-      font-size: 1.05rem;
-      color: var(--muted);
-      margin-top: 0;
-    }
+    .callout { border-radius: 18px; padding: 16px 18px; margin: 16px 0; border: 1px solid transparent; }
+    .callout strong { display: block; margin-bottom: 4px; letter-spacing: 0.03em; text-transform: uppercase; font-size: 0.86rem; }
+    .callout.canonical { background: var(--accent-soft); border-color: rgba(18,106,90,0.18); }
+    .callout.warning { background: var(--warn-soft); border-color: rgba(154,74,16,0.18); }
+    .callout.info { background: var(--info-soft); border-color: rgba(35,85,128,0.18); }
 
-    .callout {
-      border-radius: 18px;
-      padding: 16px 18px;
-      margin: 16px 0;
-      border: 1px solid transparent;
-    }
+    .two-col { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .three-col { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 16px; }
+    .card { background: #faf6f0; border: 1px solid var(--line); border-radius: 18px; padding: 16px; }
+    .card h3, .card h4 { margin-top: 0; }
 
-    .callout strong {
-      display: block;
-      margin-bottom: 4px;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      font-size: 0.86rem;
-    }
-
-    .callout.canonical {
-      background: var(--accent-soft);
-      border-color: rgba(18, 106, 90, 0.18);
-    }
-
-    .callout.warning {
-      background: var(--warn-soft);
-      border-color: rgba(154, 74, 16, 0.18);
-    }
-
-    .callout.info {
-      background: var(--info-soft);
-      border-color: rgba(35, 85, 128, 0.18);
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
-      margin-top: 16px;
-    }
-
-    .card {
-      background: #faf6f0;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 16px;
-    }
-
-    .card h3, .card h4 {
-      margin-top: 0;
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 10px 0 0;
-    }
-
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 0; }
     .pill {
-      display: inline-block;
-      padding: 5px 10px;
-      border-radius: 999px;
-      font-size: 0.78rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      border: 1px solid var(--line);
-      background: #fff;
-      color: var(--muted);
+      display: inline-block; padding: 5px 10px; border-radius: 999px;
+      font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase;
+      border: 1px solid var(--line); background: #fff; color: var(--muted);
     }
+    .pill.green  { background: #e7f3ef; color: #0f5f50; border-color: rgba(18,106,90,0.22); }
+    .pill.blue   { background: #eef4fa; color: #214b6c; border-color: rgba(35,85,128,0.18); }
+    .pill.orange { background: #fbefe5; color: #8b4b14; border-color: rgba(154,74,16,0.18); }
+    .pill.purple { background: #f3eefa; color: #5c3b91; border-color: rgba(92,59,145,0.18); }
 
-    .pill.phase-05 { background: #e7f3ef; color: #0f5f50; border-color: rgba(18,106,90,0.22); }
-    .pill.phase-1 { background: #eef4fa; color: #214b6c; border-color: rgba(35,85,128,0.18); }
-    .pill.phase-later { background: #fbefe5; color: #8b4b14; border-color: rgba(154,74,16,0.18); }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 16px 0;
-      font-size: 0.95rem;
+    .step-num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--accent); color: #fff; font-size: 0.85rem;
+      font-weight: 700; flex-shrink: 0; margin-right: 10px;
     }
+    .step { display: flex; align-items: flex-start; gap: 0; margin: 14px 0; }
+    .step-body { flex: 1; }
 
-    th, td {
-      border: 1px solid var(--line);
-      padding: 11px 12px;
-      text-align: left;
-      vertical-align: top;
-    }
-
-    th {
-      background: #f2ece2;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--muted);
-    }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.93rem; }
+    th, td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; }
+    th { background: #f2ece2; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+    tr:nth-child(even) td { background: #faf7f2; }
 
     pre {
-      margin: 16px 0;
-      padding: 18px;
-      border-radius: 18px;
-      background: #17202a;
-      color: #eff6fb;
-      overflow-x: auto;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
+      margin: 16px 0; padding: 18px; border-radius: 18px;
+      background: #17202a; color: #eff6fb; overflow-x: auto;
+      border: 1px solid rgba(255,255,255,0.06); font-size: 0.88rem; line-height: 1.55;
     }
-
-    .mini {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .checklist li {
-      margin: 8px 0;
-      list-style: square;
-    }
-
-    .footer-note {
-      font-size: 0.92rem;
-      color: var(--muted);
-    }
+    .mini { font-size: 0.9rem; color: var(--muted); }
+    .checklist li { margin: 8px 0; list-style: square; }
+    .footer-note { font-size: 0.92rem; color: var(--muted); }
+    hr { border: none; border-top: 1px solid var(--line); margin: 24px 0; }
 
     @media (max-width: 1080px) {
       .layout { grid-template-columns: 1fr; }
       .toc { position: static; }
-      .two-col { grid-template-columns: 1fr; }
+      .two-col, .three-col { grid-template-columns: 1fr; }
     }
-
     @media (max-width: 760px) {
       .page { padding: 14px; }
       .hero { padding: 24px; border-radius: 22px; }
-      section { padding: 22px; }
-      table, thead, tbody, th, td, tr { display: block; }
-      thead { display: none; }
-      td {
-        border-top: none;
-        padding-top: 8px;
-        padding-bottom: 8px;
-      }
-      td::before {
-        content: attr(data-label);
-        display: block;
-        font-size: 0.78rem;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        color: var(--muted);
-        margin-bottom: 4px;
-      }
+      section { padding: 20px; }
     }
-
     @media print {
       body { background: #fff; }
       .page { max-width: none; padding: 0; }
@@ -355,661 +166,771 @@
   </style>
 </head>
 <body>
-  <div class="page">
-    <header class="hero">
-      <div class="eyebrow">Canonical Build Manual</div>
-      <h1>TD_NLE TouchDesigner Setup Guide</h1>
-      <p>Standalone setup instructions for building the current TD_NLE Phase 0.5 + Phase 1 baseline from an empty <code>/timeline_system</code> COMP. This page normalizes the active repo direction into one walkthrough: panel-first editor shell, DAT-driven model, split scene and media players, external-time-ready transport, and recordable program output.</p>
-      <div class="badge-row">
-        <span class="badge">Phase 0.5 ingest + editor backbone</span>
-        <span class="badge">Phase 1 playback + record baseline</span>
-        <span class="badge">Last normalized: 2026-04-01</span>
-      </div>
-    </header>
-
-    <div class="layout">
-      <aside class="toc">
-        <h2>Contents</h2>
-        <ol>
-          <li><a href="#overview">Overview</a></li>
-          <li><a href="#prerequisites">Prerequisites</a></li>
-          <li><a href="#architecture">Final Target Architecture</a></li>
-          <li><a href="#walkthrough">Step-by-Step Build Walkthrough</a></li>
-          <li><a href="#schemas">Exact Schemas and Script Responsibilities</a></li>
-          <li><a href="#playback-rules">Playback Rules</a></li>
-          <li><a href="#interaction-model">Interaction Model</a></li>
-          <li><a href="#validation">Validation Checkpoints</a></li>
-          <li><a href="#next-phases">Known Gaps and Next Phases</a></li>
-        </ol>
-      </aside>
-
-      <main>
-        <section id="overview">
-          <h2>1. Overview</h2>
-          <p class="lead">TD_NLE is a TouchDesigner-native modular timeline and sequencer where DAT tables act as the edit decision list, transport resolves every time mode back to internal frames, and reusable players load either scene clips or indexed media clips.</p>
-
-          <div class="callout canonical">
-            <strong>Current Canonical Choice</strong>
-            <span>This guide supersedes older notes where the live UI container was called <code>/ui</code>. The current runtime layout lives under <code>/timeline_system/editor</code>.</span>
-          </div>
-
-          <div class="callout info">
-            <strong>Reference Philosophy</strong>
-            <span>The interaction feel is inspired by Zerrorâ€™s timeline behavior, but the backend is fully custom: no dependency, no runtime integration, and no reuse of preset-timeline internals.</span>
-          </div>
-
-          <div class="two-col">
-            <div>
-              <h3>What This Guide Builds</h3>
-              <ul>
-                <li>A blank-network assembly path for <code>/timeline_system</code>.</li>
-                <li>Root extensions for transport, player pooling, sequencing, analysis, recording, and ingest.</li>
-                <li>Model DATs using the current repo schemas.</li>
-                <li>Editor scaffolding for transport, ruler, clip canvas, note canvas, automation canvas, inspector, and media bin.</li>
-                <li>Scene-player and media-player pools that match the current <code>extPlayerPool</code> expectations.</li>
-                <li>A recordable visual path and a preferred <code>audio_mix</code> audio bus.</li>
-              </ul>
-            </div>
-            <div>
-              <h3>Out of Scope for This Pass</h3>
-              <ul>
-                <li>Fully finished clip, note, and automation panel interactions.</li>
-                <li>Embedded movie-audio extraction from video clips.</li>
-                <li>Final timecode chase polish and advanced preroll behavior.</li>
-                <li>Any locked third-party timeline component.</li>
-                <li>Automatic .toe rewiring; this guide describes the intended network you still need to build in TouchDesigner.</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section id="prerequisites">
-          <h2>2. Prerequisites</h2>
-          <p class="lead">You do not need a finished project file before starting, but you do need a few TouchDesigner basics and a clean understanding of what is optional versus required.</p>
-
-          <h3>Required TD Concepts and Operators</h3>
-          <table>
-            <thead>
-              <tr><th>Concept / OP</th><th>Why It Matters Here</th></tr>
-            </thead>
-            <tbody>
-              <tr><td data-label="Concept / OP">Base / Container COMP</td><td data-label="Why It Matters Here">Every major subsystem in this guide is a named child COMP under <code>/timeline_system</code>.</td></tr>
-              <tr><td data-label="Concept / OP">Text DAT + Extensions</td><td data-label="Why It Matters Here">All core logic lives in Python classes externalized from <code>TD_NLE/scripts</code>.</td></tr>
-              <tr><td data-label="Concept / OP">Table DAT</td><td data-label="Why It Matters Here">Clips, tracks, transport settings, analysis, notes, and automation remain DAT-driven rather than panel-driven.</td></tr>
-              <tr><td data-label="Concept / OP">CHOP Execute DAT</td><td data-label="Why It Matters Here">Used for the transport tick loop and any resolved-frame callback pattern.</td></tr>
-              <tr><td data-label="Concept / OP">Time COMP + Info CHOP</td><td data-label="Why It Matters Here">Provides the internal frame source that <code>extTransport</code> resolves from.</td></tr>
-              <tr><td data-label="Concept / OP">Movie File In TOP / Audio File In CHOP</td><td data-label="Why It Matters Here">These are the indexed media operators for video and audio clips.</td></tr>
-              <tr><td data-label="Concept / OP">Layer Mix TOP</td><td data-label="Why It Matters Here">Current canonical compositor for visual layers.</td></tr>
-              <tr><td data-label="Concept / OP">Movie File Out TOP</td><td data-label="Why It Matters Here">Final export target managed by <code>extRecorder</code>.</td></tr>
-            </tbody>
-          </table>
-
-          <h3>Expected Repo Paths</h3>
-          <table>
-            <thead>
-              <tr><th>Path</th><th>Role</th></tr>
-            </thead>
-            <tbody>
-              <tr><td data-label="Path"><code>TD_NLE/scripts</code></td><td data-label="Role">Canonical Python source for extensions, ingest callbacks, and the current transport/ruler/clip-canvas UI helper DATs.</td></tr>
-              <tr><td data-label="Path"><code>TD_NLE/model</code></td><td data-label="Role">Current DAT schema text files for clips, tracks, notes, markers, automation, transport, and analysis.</td></tr>
-              <tr><td data-label="Path"><code>TD_NLE/editor</code></td><td data-label="Role">Placeholder runtime-node names plus the current <code>editor_state</code>, <code>ui_theme</code>, <code>material_icons</code>, <code>transport_controls</code>, and <code>glsl_panels</code> seed DATs.</td></tr>
-              <tr><td data-label="Path"><code>TD_NLE/BUILD_ORDER.md</code></td><td data-label="Role">Phased build-order note that this HTML consolidates and updates.</td></tr>
-              <tr><td data-label="Path"><code>vault/TD_NLE/architecture.md</code></td><td data-label="Role">Current architecture summary describing the six root extensions and split scene/media players.</td></tr>
-              <tr><td data-label="Path"><code>vault/TD_NLE/jolly-wishing-charm.md</code></td><td data-label="Role">Earlier ingest-oriented plan. Useful for history, but no longer the canonical assembly guide.</td></tr>
-            </tbody>
-          </table>
-
-          <h3>Optional Dependencies</h3>
-          <table>
-            <thead>
-              <tr><th>Dependency</th><th>Needed For</th><th>If Missing</th></tr>
-            </thead>
-            <tbody>
-              <tr><td data-label="Dependency">TDMorph</td><td data-label="Needed For">Later-phase morph/preset blending workflows inside scene content.</td><td data-label="If Missing">Skip morph-specific authoring. The current transport, clip model, ingest, and player split still work.</td></tr>
-              <tr><td data-label="Dependency">EssentiaTD</td><td data-label="Needed For">Deeper beat, onset, loudness, tonal, and spectral analysis.</td><td data-label="If Missing">Keep <code>extAnalysis</code> attached, but treat advanced analysis lanes as optional and defer them until the plugin is installed.</td></tr>
-            </tbody>
-          </table>
-        </section>
-
-        <section id="architecture">
-          <h2>3. Final Target Architecture</h2>
-          <p class="lead">Build the network below as the intended canonical target. Some parts are fully live in Phase 0.5, some are Phase 1 baseline, and some remain deliberate scaffolding for later interaction passes.</p>
-
-          <pre><code>/timeline_system
-  /editor                     [Phase 0.5 shell + Phase 1 runtime layout]
-    transport_bar
-    timeline_ruler
-    clip_canvas
-    note_canvas
-    automation_canvas
-    inspector
-    media_bin
-    editor_state
-  /model                      [Phase 0.5]
-    clips_table
-    tracks_table
-    notes_table
-    markers_table
-    automation_table
-    transport_settings
-    analysis_table
-  /transport                  [Phase 0.5]
-    /local
-      time
-    timeline_master
-    timecode_master
-    external_time_in
-    transport_resolve
-  /players                    [Phase 0.5 + Phase 1]
-    /scene_players
-      player_1 ... player_4
-    /media_players
-      player_1 ... player_4
-  /mix                        [Phase 1]
-    layermix_main
-    program_out
-    record_out
-  /audio                      [Phase 0.5 + Phase 1]
-    audiofilein1
-    audio_mix
-    analysis
-  /record                     [Phase 1]
-    burnin_optional
-    moviefileout1
-  /scripts                    [Phase 0.5]
-    extTransport
-    extPlayerPool
-    extSequencer
-    extAnalysis
-    extRecorder
-    extIngest
-    dropzone_callbacks</code></pre>
-
-          <div class="pill-row">
-            <span class="pill phase-05">Phase 0.5: editor, ingest, external time, scene/media split</span>
-            <span class="pill phase-1">Phase 1: play, composite, record</span>
-            <span class="pill phase-later">Later: full note and automation editing UI</span>
-          </div>
-
-          <div class="callout canonical">
-            <strong>Current Canonical Choice</strong>
-            <span>Use separate <code>scene_players</code> and <code>media_players</code>. Do not force video and audio clips through the Engine COMP scene-player path.</span>
-          </div>
-        </section>
-
-        <section id="walkthrough">
-          <h2>4. Step-by-Step Build Walkthrough</h2>
-          <p class="lead">Follow this in order. Each step ends with a quick verification target so you can catch structural mistakes before they fan out into extension issues.</p>
-
-          <h3>4.1 Create the Root COMP and Child Containers</h3>
-          <p>Create a Base COMP named <code>timeline_system</code>. Inside it, create the containers below exactly with these names so the repo scripts resolve their operators by path.</p>
-          <table>
-            <thead>
-              <tr><th>Node</th><th>Type</th><th>Notes</th></tr>
-            </thead>
-            <tbody>
-              <tr><td data-label="Node"><code>/timeline_system/editor</code></td><td data-label="Type">Base or Container COMP</td><td data-label="Notes">Live runtime editor shell. This replaces older <code>/ui</code> naming.</td></tr>
-              <tr><td data-label="Node"><code>/timeline_system/model</code></td><td data-label="Type">Base COMP</td><td data-label="Notes">Source-of-truth DAT storage.</td></tr>
-              <tr><td data-label="Node"><code>/timeline_system/transport</code></td><td data-label="Type">Base COMP</td><td data-label="Notes">Clock inputs, time conversion, and tick entry point.</td></tr>
-              <tr><td data-label="Node"><code>/timeline_system/players</code></td><td data-label="Type">Base COMP</td><td data-label="Notes">Host for the split scene/media pools.</td></tr>
-              <tr><td data-label="Node"><code>/timeline_system/mix</code></td><td data-label="Type">Base COMP</td><td data-label="Notes">Visual composite and record branch.</td></tr>
-              <tr><td data-label="Node"><code>/timeline_system/audio</code></td><td data-label="Type">Base COMP</td><td data-label="Notes">Audio bus, monitoring, and analysis branch.</td></tr>
-              <tr><td data-label="Node"><code>/timeline_system/record</code></td><td data-label="Type">Base or Container COMP</td><td data-label="Notes">Burn-in and recorder output path.</td></tr>
-              <tr><td data-label="Node"><code>/timeline_system/scripts</code></td><td data-label="Type">Base COMP</td><td data-label="Notes">Text DATs externalized to the repo scripts.</td></tr>
-            </tbody>
-          </table>
-
-          <div class="callout info">
-            <strong>Verify Now</strong>
-            <span>You should be able to evaluate each child path from <code>/timeline_system</code> without any missing-operator errors.</span>
-          </div>
-
-          <h3>4.2 Create the Script DATs and Externalize Them</h3>
-          <p>Inside <code>/timeline_system/scripts</code>, create one Text DAT per script below. Turn on <code>Sync to File</code> and point each DAT at the repo file so TouchDesigner follows the same source the repo now ships.</p>
-          <table>
-            <thead>
-              <tr><th>DAT Name</th><th>Repo File</th><th>Class or Role</th></tr>
-            </thead>
-            <tbody>
-              <tr><td data-label="DAT Name"><code>extTransport</code></td><td data-label="Repo File"><code>TD_NLE/scripts/extTransport.py</code></td><td data-label="Class or Role">Root transport engine</td></tr>
-              <tr><td data-label="DAT Name"><code>extPlayerPool</code></td><td data-label="Repo File"><code>TD_NLE/scripts/extPlayerPool.py</code></td><td data-label="Class or Role">Scene/media playback manager</td></tr>
-              <tr><td data-label="DAT Name"><code>extSequencer</code></td><td data-label="Repo File"><code>TD_NLE/scripts/extSequencer.py</code></td><td data-label="Class or Role">Timeline evaluation and note firing</td></tr>
-              <tr><td data-label="DAT Name"><code>extAnalysis</code></td><td data-label="Repo File"><code>TD_NLE/scripts/extAnalysis.py</code></td><td data-label="Class or Role">Audio analysis and marker generation</td></tr>
-              <tr><td data-label="DAT Name"><code>extRecorder</code></td><td data-label="Repo File"><code>TD_NLE/scripts/extRecorder.py</code></td><td data-label="Class or Role">Movie File Out manager</td></tr>
-              <tr><td data-label="DAT Name"><code>extIngest</code></td><td data-label="Repo File"><code>TD_NLE/scripts/extIngest.py</code></td><td data-label="Class or Role">Drag-and-drop clip ingest</td></tr>
-              <tr><td data-label="DAT Name"><code>dropzone_callbacks</code></td><td data-label="Repo File"><code>TD_NLE/scripts/dropzone_callbacks.py</code></td><td data-label="Class or Role">Clip-canvas file-drop callbacks</td></tr>
-            </tbody>
-          </table>
-
-          <h3>4.3 Attach the Root Extensions</h3>
-          <p>On <code>/timeline_system</code>, open the Extensions page and attach the six class DATs. Promote them so they are available as <code>op('/timeline_system').ext.extTransport</code>, <code>.extPlayerPool</code>, and so on.</p>
-          <table>
-            <thead>
-              <tr><th>Extension DAT</th><th>Class Name</th><th>Promoted Name</th></tr>
-            </thead>
-            <tbody>
-              <tr><td data-label="Extension DAT"><code>scripts/extTransport</code></td><td data-label="Class Name">extTransport</td><td data-label="Promoted Name">extTransport</td></tr>
-              <tr><td data-label="Extension DAT"><code>scripts/extPlayerPool</code></td><td data-label="Class Name">extPlayerPool</td><td data-label="Promoted Name">extPlayerPool</td></tr>
-              <tr><td data-label="Extension DAT"><code>scripts/extSequencer</code></td><td data-label="Class Name">extSequencer</td><td data-label="Promoted Name">extSequencer</td></tr>
-              <tr><td data-label="Extension DAT"><code>scripts/extAnalysis</code></td><td data-label="Class Name">extAnalysis</td><td data-label="Promoted Name">extAnalysis</td></tr>
-              <tr><td data-label="Extension DAT"><code>scripts/extRecorder</code></td><td data-label="Class Name">extRecorder</td><td data-label="Promoted Name">extRecorder</td></tr>
-              <tr><td data-label="Extension DAT"><code>scripts/extIngest</code></td><td data-label="Class Name">extIngest</td><td data-label="Promoted Name">extIngest</td></tr>
-            </tbody>
-          </table>
-
-          <div class="callout info">
-            <strong>Verify Now</strong>
-            <span>Open the Textport and evaluate <code>op('/timeline_system').ext.extTransport</code>. If the object resolves, your extension wiring is correct.</span>
-          </div>
-
-          <h3>4.4 Build the Model DATs from the Current Repo Schemas</h3>
-          <p>Inside <code>/timeline_system/model</code>, create Table DATs named exactly as below and populate them from the schema files in <code>TD_NLE/model</code>. The repo currently includes <code>clips_table.txt</code>, <code>tracks_table.txt</code>, <code>markers_table.txt</code>, <code>notes_table.txt</code>, <code>automation_table.txt</code>, <code>transport_settings.txt</code>, and <code>analysis_table.txt</code>.</p>
-          <table>
-            <thead>
-              <tr><th>DAT</th><th>Repo Schema File</th><th>Build Note</th></tr>
-            </thead>
-            <tbody>
-              <tr><td data-label="DAT"><code>clips_table</code></td><td data-label="Repo Schema File"><code>TD_NLE/model/clips_table.txt</code></td><td data-label="Build Note">Renderable clip rows only. Do not merge notes or automation into this table.</td></tr>
-              <tr><td data-label="DAT"><code>tracks_table</code></td><td data-label="Repo Schema File"><code>TD_NLE/model/tracks_table.txt</code></td><td data-label="Build Note">Needed for track visibility, mute/solo, and clip-drop y-position mapping.</td></tr>
-              <tr><td data-label="DAT"><code>notes_table</code></td><td data-label="Repo Schema File"><code>TD_NLE/model/notes_table.txt</code></td><td data-label="Build Note">Event data stays separate from clip rows.</td></tr>
-              <tr><td data-label="DAT"><code>markers_table</code></td><td data-label="Repo Schema File"><code>TD_NLE/model/markers_table.txt</code></td><td data-label="Build Note">Used by analysis and timeline landmarks.</td></tr>
-              <tr><td data-label="DAT"><code>automation_table</code></td><td data-label="Repo Schema File"><code>TD_NLE/model/automation_table.txt</code></td><td data-label="Build Note">Future-facing automation lanes still belong here.</td></tr>
-              <tr><td data-label="DAT"><code>transport_settings</code></td><td data-label="Repo Schema File"><code>TD_NLE/model/transport_settings.txt</code></td><td data-label="Build Note">Includes the current <code>external_seconds_offset</code> key.</td></tr>
-              <tr><td data-label="DAT"><code>analysis_table</code></td><td data-label="Repo Schema File"><code>TD_NLE/model/analysis_table.txt</code></td><td data-label="Build Note">Safe to seed now even if you defer Essentia analysis.</td></tr>
-            </tbody>
-          </table>
-
-          <div class="callout info">
-            <strong>Verify Now</strong>
-            <span>The <code>clips_table</code> header should include the new trim and media fields, and <code>transport_settings</code> should already contain <code>external_seconds_offset</code>.</span>
-          </div>          <h3>4.5 Build the Editor Shell</h3>
-          <p>Create the runtime editor nodes under <code>/timeline_system/editor</code>. These are the visible shell for the Zerror-inspired interaction model, but the data truth stays in DATs.</p>
-          <table>
-            <thead>
-              <tr><th>Node</th><th>Type</th><th>Purpose</th></tr>
-            </thead>
-            <tbody>
-              <tr><td data-label="Node"><code>transport_bar</code></td><td data-label="Type">Container COMP</td><td data-label="Purpose">Transport buttons, loop controls, SMPTE, frame, BPM, external-time toggle, timecode-chase toggle, record arm.</td></tr>
-              <tr><td data-label="Node"><code>timeline_ruler</code></td><td data-label="Type">Container COMP</td><td data-label="Purpose">Visible time scale and playhead strip.</td></tr>
-              <tr><td data-label="Node"><code>clip_canvas</code></td><td data-label="Type">Container COMP</td><td data-label="Purpose">Renderable clip lane panel and drag/drop target.</td></tr>
-              <tr><td data-label="Node"><code>note_canvas</code></td><td data-label="Type">Container COMP</td><td data-label="Purpose">Reserved for note editing in a later pass.</td></tr>
-              <tr><td data-label="Node"><code>automation_canvas</code></td><td data-label="Type">Container COMP</td><td data-label="Purpose">Reserved for automation lane editing in a later pass.</td></tr>
-              <tr><td data-label="Node"><code>inspector</code></td><td data-label="Type">Container COMP</td><td data-label="Purpose">Selection-driven clip and track detail panel.</td></tr>
-              <tr><td data-label="Node"><code>media_bin</code></td><td data-label="Type">Container COMP</td><td data-label="Purpose">Future browser for scene clips, file assets, and reusable sources.</td></tr>
-              <tr><td data-label="Node"><code>editor_state</code></td><td data-label="Type">Table DAT</td><td data-label="Purpose">Zoom, pan, selection, playhead, and hover state. Panel geometry is never the source of truth.</td></tr>
-              <tr><td data-label="Node"><code>ui_theme</code></td><td data-label="Type">Table DAT</td><td data-label="Purpose">Visual tokens for color, typography, spacing, and dense-control sizing. Keep this separate from editor interaction state.</td></tr>
-              <tr><td data-label="Node"><code>material_icons</code></td><td data-label="Type">Table DAT</td><td data-label="Purpose">Semantic icon mapping for TouchDesigner Material Design Icon usage.</td></tr>
-              <tr><td data-label="Node"><code>transport_controls</code></td><td data-label="Type">Table DAT</td><td data-label="Purpose">Canonical ordering and action metadata for transport-bar controls.</td></tr>
-              <tr><td data-label="Node"><code>glsl_panels</code></td><td data-label="Type">Table DAT</td><td data-label="Purpose">Declares which editor surfaces stay native and which should receive selective GLSL overlays.</td></tr>
-            </tbody>
-          </table>
-
-          <p>Seed <code>editor_state</code> with the current repo values so file-drop placement, ruler math, hover state, and selection helpers all agree on the same viewport state:</p>
-          <pre><code>key	value
-pixels_per_frame	2.0
-view_start_frame	0
-view_end_frame	900
-selected_clip_ids	[]
-selected_note_ids	[]
-selected_automation_ids	[]
-drag_mode	none
-selection_mode	replace
-playhead_frame	0
-hover_frame	-1
-hover_track	-1
-hover_clip_id	
-ui_focus	none</code></pre>
-
-          <div class="callout canonical">
-            <strong>Current Canonical Choice</strong>
-            <span>Keep interaction truth in <code>editor_state</code>, keep visual tokens in <code>ui_theme</code>, keep icon semantics in <code>material_icons</code>, and keep the native-vs-GLSL split explicit in <code>glsl_panels</code>.</span>
-          </div>
-
-          <p>Load these repo scripts into <code>/timeline_system/scripts</code> for the current UI pass:</p>
-          <ul>
-            <li><code>editor_state_utils</code> for viewport math, selection, hover, and clip move helpers.</li>
-            <li><code>transport_bar_actions</code> for native transport-bar button actions and readouts.</li>
-            <li><code>timeline_ruler_callbacks</code> for playhead drag, tick-mark generation, zoom, pan, and Home-to-fit.</li>
-            <li><code>clip_canvas_callbacks</code> for hover, selection, marquee select, move helpers, and drag/drop ingest on the same surface.</li>
-          </ul>
-
-          <div class="callout info">
-            <strong>Verify Now</strong>
-            <span>Open <code>/timeline_system/editor/editor_state</code> and confirm the key names match the helper scripts exactly. Then inspect <code>ui_theme</code>, <code>material_icons</code>, <code>transport_controls</code>, and <code>glsl_panels</code> and confirm they exist as separate DATs instead of being folded into <code>editor_state</code>.</span>
-          </div>
-
-          <h3>4.6 Build the Transport Subsystem</h3><h3>4.6 Build the Transport Subsystem</h3>
-          <p>The current transport is frame-first internally, but it accepts external seconds cleanly. Build the following under <code>/timeline_system/transport</code>.</p>
-          <table>
-            <thead>
-              <tr><th>Node</th><th>Type</th><th>Canonical Setup</th></tr>
-            </thead>
-            <tbody>
-              <tr><td data-label="Node"><code>local</code></td><td data-label="Type">Base COMP</td><td data-label="Canonical Setup">Container for the Time COMP so the path remains <code>transport/local/time</code>.</td></tr>
-              <tr><td data-label="Node"><code>local/time</code></td><td data-label="Type">Time COMP</td><td data-label="Canonical Setup">Set it up in frames, with rate matching project FPS. <code>extTransport</code> toggles its <code>play</code> state and writes range start values directly.</td></tr>
-              <tr><td data-label="Node"><code>timeline_master</code></td><td data-label="Type">Info CHOP or equivalent CHOP</td><td data-label="Canonical Setup">Target <code>local/time</code> and expose a channel named <code>frame</code>.</td></tr>
-              <tr><td data-label="Node"><code>timecode_master</code></td><td data-label="Type">CHOP</td><td data-label="Canonical Setup">Can start as a Constant CHOP with an <code>index</code> channel. Later swap to LTC/MTC or SMPTE ingest.</td></tr>
-              <tr><td data-label="Node"><code>external_time_in</code></td><td data-label="Type">CHOP</td><td data-label="Canonical Setup">Public interface is seconds. Use a <code>seconds</code> channel if possible. <code>extTransport</code> also accepts <code>time</code>, <code>sec</code>, or the first channel.</td></tr>
-              <tr><td data-label="Node"><code>transport_resolve</code></td><td data-label="Type">CHOP Execute DAT</td><td data-label="Canonical Setup">Watch the frame-driving CHOP and tick the sequencer on frame changes.</td></tr>
-            </tbody>
-          </table>
-
-          <div class="callout canonical">
-            <strong>Current Canonical Choice</strong>
-            <span>Transport supports <code>internal</code>, <code>external</code>, <code>timecode</code>, <code>beat</code>, and <code>scrub</code>. External input arrives in seconds and is converted to internal frames immediately.</span>
-          </div>
-
-          <p>Baseline transport callback:</p>
-          <pre><code># /timeline_system/transport/transport_resolve (CHOP Execute DAT)
-def onValueChange(channel, sampleIndex, val, prev):
-    if channel.name == 'frame':
-        op('/timeline_system').ext.extSequencer.Tick()</code></pre>
-
-          <p class="mini">If you later add a dedicated resolved-frame CHOP, repoint the CHOP Execute DAT there. For the baseline build, watching <code>timeline_master</code> is enough to prove the transport path.</p>
-
-          <div class="callout info">
-            <strong>Verify Now</strong>
-            <span>Set <code>clock_source</code> to <code>internal</code>, hit play on <code>local/time</code>, and confirm <code>extTransport.CurrentFrame()</code> advances. Then set <code>clock_source</code> to <code>external</code>, feed a test value into <code>external_time_in</code>, and confirm the returned frame changes accordingly.</span>
-          </div>
-
-          <h3>4.7 Build the Scene Player Pool</h3>
-          <p>Create <code>/timeline_system/players/scene_players</code> and inside it create <code>player_1</code> through <code>player_4</code>. These are for <code>.tox</code> scene clips only.</p>
-          <table>
-            <thead>
-              <tr><th>Inside Each Scene Player</th><th>Why It Exists</th></tr>
-            </thead>
-            <tbody>
-              <tr><td data-label="Inside Each Scene Player"><code>engine_comp</code> (preferred)</td><td data-label="Why It Exists">Preferred Engine COMP host for process isolation. <code>extPlayerPool</code> looks for this child first.</td></tr>
-              <tr><td data-label="Inside Each Scene Player">Custom pars or exposed pars for <code>Active</code>, <code>Prewarm</code>, <code>Bypassrender</code>, <code>Localtime</code>, <code>Clipprogress</code>, <code>Opacity</code></td><td data-label="Why It Exists">These form the current scene clip contract.</td></tr>
-              <tr><td data-label="Inside Each Scene Player"><code>OUT_TOP</code></td><td data-label="Why It Exists">Stable visual output path for Layer Mix.</td></tr>
-              <tr><td data-label="Inside Each Scene Player"><code>preset_manager</code> (optional)</td><td data-label="Why It Exists">If present and it exposes <code>JumpToPreset</code>, <code>preset_name</code> can be applied on load for scene clips.</td></tr>
-            </tbody>
-          </table>
-
-          <p>The scene-player loader currently supports two modes:</p>
-          <ul>
-            <li>Preferred: <code>engine_comp.par.file</code> plus <code>reloadpulse</code> or <code>reload</code>.</li>
-            <li>Fallback: legacy external-tox style using <code>externaltox</code>, <code>subcompname</code>, and <code>reinitnet</code>.</li>
-          </ul>
-
-          <div class="callout warning">
-            <strong>Important</strong>
-            <span>Do not reuse these scene slots for video or audio clips. The current player manager treats <code>media_type = tox</code> as the boundary for the scene pool.</span>
-          </div>
-
-          <div class="callout info">
-            <strong>Verify Now</strong>
-            <span>Manually load a known scene clip into <code>scene_players/player_1</code>, confirm the Engine COMP path resolves, and make sure an <code>OUT_TOP</code> exists at a stable path the mixer can connect to.</span>
-          </div>
-
-          <h3>4.8 Build the Media Player Pool</h3>
-          <p>Create <code>/timeline_system/players/media_players</code> and inside it create <code>player_1</code> through <code>player_4</code>. The current script also tolerates <code>media_player_1..4</code>, but <code>player_1..4</code> matches the current repo placeholders.</p>
-          <table>
-            <thead>
-              <tr><th>Inside Each Media Player</th><th>Canonical Naming</th><th>Notes</th></tr>
-            </thead>
-            <tbody>
-              <tr><td data-label="Inside Each Media Player">Movie operator</td><td data-label="Canonical Naming"><code>movie_filein</code> preferred, <code>moviefilein1</code> accepted</td><td data-label="Notes">Used for video clips. <code>extPlayerPool</code> sets play mode to specify index in seconds.</td></tr>
-              <tr><td data-label="Inside Each Media Player">Audio operator</td><td data-label="Canonical Naming"><code>audio_filein</code> preferred, <code>audiofilein1</code> accepted</td><td data-label="Notes">Used for audio clips. Also driven by seconds index.</td></tr>
-              <tr><td data-label="Inside Each Media Player">Visual switch</td><td data-label="Canonical Naming"><code>out_select_top</code></td><td data-label="Notes">Index 0 should be a blank or pass-through slot. Index 1 should route the movie output.</td></tr>
-              <tr><td data-label="Inside Each Media Player">Visual output</td><td data-label="Canonical Naming"><code>OUT_TOP</code></td><td data-label="Notes">Only meaningful for video clips.</td></tr>
-              <tr><td data-label="Inside Each Media Player">Audio output</td><td data-label="Canonical Naming"><code>OUT_AUDIO</code> preferred, <code>audio_out</code> accepted</td><td data-label="Notes">Collected into <code>audio_mix</code> for recorder audio.</td></tr>
-            </tbody>
-          </table>
-
-          <p>Media trim is nondestructive. The player pool converts timeline frames to seconds, writes trim parameters on load, and drives <code>index</code> in seconds every frame.</p>
-
-          <div class="callout info">
-            <strong>Verify Now</strong>
-            <span>Load a test movie and a test audio file into one media player each. Scrub their <code>index</code> manually in seconds and verify both follow correctly without touching the source files.</span>
-          </div>
-
-          <h3>4.9 Build the Visual Mix</h3>
-          <p>Inside <code>/timeline_system/mix</code>, create the compositor nodes below.</p>
-          <table>
-            <thead>
-              <tr><th>Node</th><th>Type</th><th>Canonical Wiring</th></tr>
-            </thead>
-            <tbody>
-              <tr><td data-label="Node"><code>layermix_main</code></td><td data-label="Type">Layer Mix TOP</td><td data-label="Canonical Wiring">Wire visual player outputs in a stable order: scene players first, then media players.</td></tr>
-              <tr><td data-label="Node"><code>program_out</code></td><td data-label="Type">Null TOP</td><td data-label="Canonical Wiring">Preview/program feed from <code>layermix_main</code>.</td></tr>
-              <tr><td data-label="Node"><code>record_out</code></td><td data-label="Type">Null TOP or Select TOP</td><td data-label="Canonical Wiring">Final recorder source. The simplest build is <code>program_out -> record/burnin_optional -> record_out</code>.</td></tr>
-            </tbody>
-          </table>
-
-          <p class="mini">Match your Layer Mix input order to the stable pool order so clip assignment stays predictable. Audio clips do not produce visual layers and should never be represented as fake visual mix layers.</p>
-
-          <div class="callout info">
-            <strong>Verify Now</strong>
-            <span>Turn one scene player and one video player visible. Confirm both can appear in <code>program_out</code> with stable Layer Mix input ordering.</span>
-          </div>
-
-          <h3>4.10 Build the Audio Bus</h3>
-          <p>Inside <code>/timeline_system/audio</code>, create the baseline audio branch.</p>
-          <table>
-            <thead>
-              <tr><th>Node</th><th>Type</th><th>Canonical Role</th></tr>
-            </thead>
-            <tbody>
-              <tr><td data-label="Node"><code>audiofilein1</code></td><td data-label="Type">Audio File In CHOP</td><td data-label="Canonical Role">Legacy or manual audio source. Safe fallback when the media pool is not yet fully wired.</td></tr>
-              <tr><td data-label="Node"><code>audio_mix</code></td><td data-label="Type">Merge CHOP + Null CHOP end point</td><td data-label="Canonical Role">Preferred bus for active media-player audio outputs and recorder audio.</td></tr>
-              <tr><td data-label="Node"><code>analysis</code></td><td data-label="Type">Base COMP</td><td data-label="Canonical Role">Reserved analysis branch for EssentiaTD or fallback analyzers.</td></tr>
-            </tbody>
-          </table>
-
-          <p>Wire <code>players/media_players/*/OUT_AUDIO</code> into <code>audio_mix</code>. Add an Audio Device Out CHOP if you want local monitoring, but keep <code>audio_mix</code> as the recorder-facing aggregation point.</p>
-
-          <div class="callout canonical">
-            <strong>Current Canonical Choice</strong>
-            <span><code>extRecorder</code> now prefers <code>audio/audio_mix</code> when present and only falls back to <code>audio/audiofilein1</code> if the mix bus has not been built yet.</span>
-          </div>
-
-          <div class="callout info">
-            <strong>Verify Now</strong>
-            <span>Inspect <code>op('/timeline_system').ext.extRecorder.AudioSource</code>. It should resolve to <code>/timeline_system/audio/audio_mix</code> once that node exists.</span>
-          </div>
-
-          <h3>4.11 Build the Record Chain</h3>
-          <p>Inside <code>/timeline_system/record</code>, build a minimal burn-in and output path that matches the recorder extension.</p>
-          <table>
-            <thead>
-              <tr><th>Node</th><th>Type</th><th>Canonical Role</th></tr>
-            </thead>
-            <tbody>
-              <tr><td data-label="Node"><code>burnin_optional</code></td><td data-label="Type">Container or Base COMP with TOP output</td><td data-label="Canonical Role">Overlay TC, frame, clip name, or metadata onto the incoming visual feed. <code>extRecorder</code> toggles its active/bypass behavior.</td></tr>
-              <tr><td data-label="Node"><code>moviefileout1</code></td><td data-label="Type">Movie File Out TOP</td><td data-label="Canonical Role">Final exporter. <code>extRecorder</code> sets file path, mode, codec, burn-in state, and audio CHOP.</td></tr>
-            </tbody>
-          </table>
-
-          <p>The simplest reliable routing is:</p>
-          <pre><code>/timeline_system/mix/program_out
-    -> /timeline_system/record/burnin_optional
-    -> /timeline_system/mix/record_out
-    -> /timeline_system/record/moviefileout1</code></pre>
-
-          <div class="callout info">
-            <strong>Verify Now</strong>
-            <span>Call <code>op('/timeline_system').ext.extRecorder.SetMode('review')</code>, then <code>StartRecord()</code>. Confirm the Movie File Out TOP receives a path and an audio CHOP path.</span>
-          </div>
-
-          <h3>4.12 Wire Clip-Canvas Drop Behavior</h3>
-          <p>Enable file dropping on <code>/timeline_system/editor/clip_canvas</code> and point its canonical callbacks DAT at <code>/timeline_system/scripts/clip_canvas_callbacks</code>. Keep <code>/timeline_system/scripts/dropzone_callbacks</code> available as a compatibility wrapper if you only want file-drop ingest. The current callback layer maps panel <code>x</code> to <code>start_frame</code> using <code>editor_state</code> and panel <code>y</code> to track using <code>tracks_table</code>.</p>
-          <pre><code># The repo script already implements this behavior.
-# Key expectations:
-# - editor/editor_state contains pixels_per_frame and view_start_frame
-# - model/tracks_table contains track and height columns
-# - dropped files are appended through extIngest.IngestFile()</code></pre>
-
-          <p>Current behavior already supports sequential multi-file drops: the first clip lands at the drop frame, and each following clip advances by the previous clip's duration.</p>
-
-          <div class="callout info">
-            <strong>Verify Now</strong>
-            <span>Drop one <code>.tox</code>, one video file, and one audio file onto <code>clip_canvas</code>. Confirm rows are appended to <code>clips_table</code> with the right <code>media_type</code>, <code>source_in</code>, <code>source_out</code>, and <code>fps</code> fields.</span>
-          </div>
-        </section>
-
-        <section id="schemas">
-          <h2>5. Exact Schemas and Script Responsibilities</h2>
-          <p class="lead">These are the current fields and ownership boundaries the repo expects right now.</p>
-
-          <h3>Current <code>clips_table</code> Header</h3>
-          <pre><code>id	track	tox_path	subcomp	start_frame	duration_frames	start_tc	end_tc	in_offset	out_offset	opacity	blend_mode	transition_in	transition_out	preroll_frames	enabled	params_json	media_type	source_in	source_out	fps	preset_name</code></pre>
-
-          <div class="callout canonical">
-            <strong>Current Canonical Choice</strong>
-            <span><code>clips_table</code> only stores renderable clip rows. Notes, markers, and automation remain in their own DATs.</span>
-          </div>
-
-          <h3>Current <code>transport_settings</code> Seed</h3>
-          <pre><code>key	value
-clock_source	internal
-fps	30
-tc_offset	00:00:00:00
-bpm	120
-signature_num	4
-signature_den	4
-loop_start_frame	0
-loop_end_frame	900
-loop_enabled	0
-external_seconds_offset	0.0</code></pre>
-
-          <h3>Extension Ownership Map</h3>
-          <table>
-            <thead>
-              <tr><th>Extension</th><th>Owns</th><th>Important Expectations</th></tr>
-            </thead>
-            <tbody>
-              <tr><td data-label="Extension"><code>extTransport</code></td><td data-label="Owns">Clock source resolution, frame/seconds/TC/beat conversion, looping, play/pause/stop, external time handling</td><td data-label="Important Expectations">Needs <code>model/transport_settings</code>, <code>transport/local/time</code>, <code>transport/timeline_master</code>, <code>transport/timecode_master</code>, and <code>transport/external_time_in</code>.</td></tr>
-              <tr><td data-label="Extension"><code>extIngest</code></td><td data-label="Owns">File-type detection, media probing, track placement fallback, row creation</td><td data-label="Important Expectations">Accepts scene clips, video, and audio. Writes nondestructive trim fields into <code>clips_table</code>.</td></tr>
-              <tr><td data-label="Extension"><code>extPlayerPool</code></td><td data-label="Owns">Slot registration, active/preroll assignment, scene/media pool split, preset-on-load, output discovery</td><td data-label="Important Expectations">Looks for <code>scene_players</code> and <code>media_players</code>; media players need named movie/audio ops and stable <code>OUT_TOP</code>/<code>OUT_AUDIO</code>.</td></tr>
-              <tr><td data-label="Extension"><code>extSequencer</code></td><td data-label="Owns">Timeline tick, clip activation, note evaluation, automation sampling, track filtering, burn-in updates</td><td data-label="Important Expectations">Relies on transport for the current frame and the player pool for active visual/audio routing.</td></tr>
-              <tr><td data-label="Extension"><code>extRecorder</code></td><td data-label="Owns">Record mode presets, output pathing, burn-in enable state, Movie File Out control</td><td data-label="Important Expectations">Prefers <code>audio/audio_mix</code>; expects <code>mix/program_out</code>, <code>mix/record_out</code>, <code>record/burnin_optional</code>, and <code>record/moviefileout1</code>.</td></tr>
-              <tr><td data-label="Extension"><code>extAnalysis</code></td><td data-label="Owns">Audio analysis metadata, BPM/confidence, marker extraction, analysis-table population</td><td data-label="Important Expectations">Safe to defer full network wiring if EssentiaTD is not installed, but the model table can still exist now.</td></tr>
-            </tbody>
-          </table>
-        </section>
-
-        <section id="playback-rules">
-          <h2>6. Playback Rules</h2>
-          <div class="cards">
-            <div class="card">
-              <h3>Internal Frame Is Truth</h3>
-              <p>Every playback mode resolves to an internal frame count. UI panels, external clocks, timecode, and beat logic all collapse back to that one engine truth.</p>
-            </div>
-            <div class="card">
-              <h3>External Time Arrives in Seconds</h3>
-              <p><code>external_time_in</code> is a seconds-facing input. <code>extTransport</code> converts it to frames immediately and applies loop logic afterward.</p>
-            </div>
-            <div class="card">
-              <h3>Scene Clips Stay in Scene Players</h3>
-              <p><code>.tox</code> clips are loaded into the Engine COMP scene pool and use the scene clip contract: <code>Active</code>, <code>Localtime</code>, <code>Clipprogress</code>, <code>Opacity</code>, and preroll toggles.</p>
-            </div>
-            <div class="card">
-              <h3>Video and Audio Stay in Media Players</h3>
-              <p>Movie and audio files are driven by seconds index. They are not forced through scene-player wrappers.</p>
-            </div>
-            <div class="card">
-              <h3>Visual vs Audio Separation Matters</h3>
-              <p><code>.tox</code> and video clips contribute visual layers. Audio clips route to the audio bus only and should never consume fake visual mix layers.</p>
-            </div>
-            <div class="card">
-              <h3>Trimming Is Nondestructive</h3>
-              <p><code>source_in</code>, <code>source_out</code>, <code>in_offset</code>, and stretch behavior only change DAT values and playback math. The source media files are untouched.</p>
-            </div>
-          </div>
-        </section>
-
-        <section id="interaction-model">
-          <h2>7. Interaction Model</h2>
-          <p class="lead">The target interaction language is panel-first, transport-centered, and now backed by repo-native helper scripts for the priority surfaces. Trim and stretch gestures remain future work, but the current UI layer now establishes shared state, native icon-driven controls, and selective GLSL-ready overlays.</p>
-
-          <table>
-            <thead>
-              <tr><th>Interaction</th><th>Current Direction</th><th>Status</th></tr>
-            </thead>
-            <tbody>
-              <tr><td data-label="Interaction">Playhead drag on ruler or transport strip</td><td data-label="Current Direction">Set current frame by dragging visible time, with transport readout updating immediately.</td><td data-label="Status">Repo helper implemented via <code>timeline_ruler_callbacks.SetPlayheadFromX()</code>; live DAT wiring still manual</td></tr>
-              <tr><td data-label="Interaction">Loop in / out visibility and edit handles</td><td data-label="Current Direction">Loop state should be readable and editable from <code>transport_bar</code>.</td><td data-label="Status">Transport action scaffolding exists; visual loop handles still to build</td></tr>
-              <tr><td data-label="Interaction">Mouse-wheel zoom</td><td data-label="Current Direction">Modify <code>editor_state.pixels_per_frame</code> around the cursor anchor.</td><td data-label="Status">Repo helper implemented via <code>timeline_ruler_callbacks.WheelZoomAtX()</code></td></tr>
-              <tr><td data-label="Interaction">RMB pan</td><td data-label="Current Direction">Shift the visible time range by editing <code>view_start_frame</code> and <code>view_end_frame</code>.</td><td data-label="Status">Repo helper implemented via <code>timeline_ruler_callbacks.PanGesture()</code></td></tr>
-              <tr><td data-label="Interaction">Home-to-fit</td><td data-label="Current Direction">Frame the full clip extent inside the current view window.</td><td data-label="Status">Repo helper implemented via <code>transport_bar_actions</code> and <code>clip_canvas_callbacks.HomeToFit()</code></td></tr>
-              <tr><td data-label="Interaction">Drag-and-drop media ingest</td><td data-label="Current Direction">Drop files directly onto <code>clip_canvas</code> and append rows through <code>extIngest</code>.</td><td data-label="Status">Implemented in the current repo scripts</td></tr>
-              <tr><td data-label="Interaction">LMB select / Shift add-remove</td><td data-label="Current Direction">Selection should live in <code>editor_state</code>, not in panel objects.</td><td data-label="Status">Repo helper implemented via <code>clip_canvas_callbacks.SelectAtPosition()</code> and shared editor-state utilities</td></tr>
-              <tr><td data-label="Interaction">Drag body to move clip</td><td data-label="Current Direction">Update <code>start_frame</code> and possibly <code>track</code> without touching source trim metadata.</td><td data-label="Status">Repo mutation helper exists via <code>clip_canvas_callbacks.MoveSelectedByDelta()</code>; gesture wiring still manual</td></tr>
-              <tr><td data-label="Interaction">Drag edge to trim</td><td data-label="Current Direction">Adjust <code>source_in</code>/<code>source_out</code> or visible duration nondestructively.</td><td data-label="Status">Planned</td></tr>
-              <tr><td data-label="Interaction">Shift-edge drag to stretch timing</td><td data-label="Current Direction">Stretch clip timing without modifying the source file.</td><td data-label="Status">Planned</td></tr>
-            </tbody>
-          </table>
-
-          <div class="callout info">
-            <strong>Scope Reminder</strong>
-            <span>The current implementation pass now covers theme/icon data, ruler/canvas helper scripts, transport-bar actions, and selective GLSL contracts. Note editing, automation editing, trim handles, and stretch gestures remain future-facing.</span>
-          </div>
-        </section>
-
-        <section id="validation">
-          <h2>8. Validation Checkpoints</h2>
-          <p class="lead">Use this final checklist after the network is assembled. If one step fails, do not move deeper into recording or timecode until the earlier path is clean.</p>
-
-          <h3>Final Integration Checklist</h3>
-          <ul class="checklist">
-            <li>Drop one <code>.tox</code> clip onto <code>clip_canvas</code> and confirm a new <code>clips_table</code> row appears with <code>media_type = tox</code>, <code>source_in = 0</code>, <code>source_out = -1</code>, and <code>fps = 0</code>.</li>
-            <li>Drop one video clip and confirm it writes <code>media_type = video</code>, <code>source_out = -1</code>, and a usable <code>fps</code> value.</li>
-            <li>Drop one audio clip and confirm it writes <code>media_type = audio</code> with nondestructive source trim values.</li>
-            <li>Drop multiple files in one action and confirm each subsequent row starts after the previous clip's duration.</li>
-            <li>Wire native Material Design Icon glyphs into <code>transport_bar</code> and confirm they remain legible at both normal transport sizes and compact track-header densities.</li>
-            <li>Call the new zoom, pan, playhead-drag, and Home-to-fit helpers and confirm only <code>editor_state</code> changes while clip/media data stays in model DATs.</li>
-            <li>Hover and select clips on <code>clip_canvas</code> and confirm <code>hover_frame</code>, <code>hover_track</code>, <code>hover_clip_id</code>, and <code>selected_clip_ids</code> update in <code>editor_state</code>.</li>
-            <li>Wire the GLSL overlays declared in <code>glsl_panels</code> for <code>timeline_ruler</code> and <code>clip_canvas</code> and confirm playhead, grid, and selection overlays line up exactly with DAT-driven frame positions.</li>
-            <li>Bypass the GLSL overlay COMPs and confirm transport controls, drag/drop ingest, and callback-driven selection still work through native panels.</li>
-            <li>Switch <code>clock_source</code> between <code>internal</code>, <code>external</code>, and <code>timecode</code> and verify the current frame remains coherent.</li>
-            <li>Record a short review pass and confirm <code>moviefileout1</code> receives the visual branch plus the <code>audio_mix</code> CHOP.</li>
-            <li>Confirm the build works without any dependency on Zerror assets, preset timeline APIs, or locked third-party components.</li>
-          </ul>
-
-          <div class="callout warning">
-            <strong>Reality Check</strong>
-            <span>The repo now contains the extension code, editor UI helper scripts, theme/icon DAT seeds, and placeholder node names, but it does not automatically wire the actual <code>.toe</code> network for you. This guide remains the canonical wiring target for that manual TouchDesigner step.</span>
-          </div>
-        </section>
-
-        <section id="next-phases">
-          <h2>9. Known Gaps and Next Phases</h2>
-          <div class="cards">
-            <div class="card">
-              <h3>Note Editing UI</h3>
-              <p><code>note_canvas</code> exists as a target, but direct note creation and editing panels are still not built.</p>
-            </div>
-            <div class="card">
-              <h3>Automation UI</h3>
-              <p><code>automation_canvas</code> and <code>automation_table</code> are part of the model, but the full keyframe editor still belongs to a later pass.</p>
-            </div>
-            <div class="card">
-              <h3>Actual .toe Wiring</h3>
-              <p>The repo structure now documents the intended network, but the live TouchDesigner project still needs to be wired to match it node-for-node.</p>
-            </div>
-            <div class="card">
-              <h3>Embedded Movie Audio</h3>
-              <p>Video clips are currently treated as visual clips. Standalone audio clips handle the audio lane; embedded movie audio remains deferred.</p>
-            </div>
-            <div class="card">
-              <h3>Timecode Polish</h3>
-              <p>Advanced SMPTE chase behavior, preroll nuance, and cleaner burn-in metadata still belong to a later phase.</p>
-            </div>
-            <div class="card">
-              <h3>Trim and Stretch Gestures</h3>
-              <p>The new helper layer now covers playhead drag, zoom, pan, selection, and clip move helpers. Trim handles, stretch gestures, and their final GLSL/native visuals still need live panel wiring.</p>
-            </div>
-          </div>
-
-          <div class="callout canonical">
-            <strong>Source Normalization</strong>
-            <span>This HTML consolidates the current intended direction from <code>vault/TD_NLE/jolly-wishing-charm.md</code>, <code>vault/TD_NLE/architecture.md</code>, <code>TD_NLE/BUILD_ORDER.md</code>, and the active extension scripts. If those sources disagree, follow this page.</span>
-          </div>
-
-          <p class="footer-note">Recommended next implementation step after wiring the baseline network: build live trim and stretch gestures plus the actual native/GLSL node layouts around <code>ui_theme</code>, <code>material_icons</code>, <code>transport_controls</code>, <code>glsl_panels</code>, and the new editor helper scripts.</p>
-        </section>      </main>
+<div class="page">
+
+  <header class="hero">
+    <div class="eyebrow">Canonical Build Manual — Updated 2026-04-01</div>
+    <h1>TD_NLE TouchDesigner Setup Guide</h1>
+    <p>Complete setup reference for building TD_NLE from an empty <code>/timeline_system</code> COMP. Covers the fixed-shell player architecture, DAT-driven model, drag-and-drop + browse ingest, TDMorph sequencing, EssentiaTD audio analysis, and project/template save model.</p>
+    <div class="badge-row">
+      <span class="badge">Fixed shells — no replicators in playback path</span>
+      <span class="badge">6 Python extensions</span>
+      <span class="badge">scene3d / scene2d / fx / video / audio</span>
+      <span class="badge">TDMorph + EssentiaTD integrated</span>
     </div>
-  </div>
+  </header>
+
+  <div class="layout">
+    <aside class="toc">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#overview">Overview &amp; Philosophy</a></li>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#structure">Repository Structure</a></li>
+        <li><a href="#schemas">DAT Table Schemas</a></li>
+        <li><a href="#shells">Shell Contracts</a></li>
+        <li><a href="#extensions">Python Extensions</a></li>
+        <li><a href="#walkthrough">Build Walkthrough</a>
+          <ol class="sub">
+            <li><a href="#step-model">Step 1 — Model DATs</a></li>
+            <li><a href="#step-transport">Step 2 — Transport</a></li>
+            <li><a href="#step-players">Step 3 — Player Shells</a></li>
+            <li><a href="#step-extensions">Step 4 — Wire Extensions</a></li>
+            <li><a href="#step-ingest">Step 5 — Ingest &amp; Browse</a></li>
+            <li><a href="#step-mix">Step 6 — Layer Mix</a></li>
+            <li><a href="#step-ui">Step 7 — Editor UI</a></li>
+          </ol>
+        </li>
+        <li><a href="#ingest">Media Ingest &amp; Browse</a></li>
+        <li><a href="#tdmorph">TDMorph Integration</a></li>
+        <li><a href="#essentia">EssentiaTD Integration</a></li>
+        <li><a href="#iosave">Project &amp; Template Save</a></li>
+        <li><a href="#opennetwork">Open Network Button</a></li>
+        <li><a href="#playback">Playback Rules</a></li>
+        <li><a href="#validation">Validation Checkpoints</a></li>
+        <li><a href="#next">Next Phases</a></li>
+      </ol>
+    </aside>
+
+    <main>
+
+      <!-- ───────────── OVERVIEW ───────────── -->
+      <section id="overview">
+        <h2>1. Overview &amp; Philosophy</h2>
+        <p class="lead">TD_NLE is a TouchDesigner-native modular NLE and sequencer. DAT tables are the single source of truth. Fixed shell COMPs load external .tox templates on demand. The UI reflects the model — never the other way around.</p>
+
+        <div class="callout canonical">
+          <strong>Core Rule</strong>
+          Do not use Replicator COMP in the playback path. Use a fixed set of shell COMPs that load external .tox templates via Engine COMP. Replicator is reserved for admin/browser tools only.
+        </div>
+
+        <div class="three-col" style="margin-top:16px;">
+          <div class="card">
+            <h4>No Replicators at Runtime</h4>
+            <p class="mini">A fixed pool of shell COMPs (scene3d, scene2d, fx, video, audio) is created once. The timeline assigns clips to available shells by <code>shell_type</code>. Shells are never created or destroyed during playback.</p>
+          </div>
+          <div class="card">
+            <h4>Two-Tier Parameter Ownership</h4>
+            <p class="mini">Templates own their native controls. The project owns only the overrides it cares about. Overrides live in <code>overrides_json</code> per clip and in <code>overrides_table</code> for inspector snapshots.</p>
+          </div>
+          <div class="card">
+            <h4>Separate Project &amp; Template Save</h4>
+            <p class="mini">.toe = full session. A JSON sidecar holds portable timeline state. .tox = individual template, saved explicitly by the author via RMB → Save Component. Never auto-saved by the timeline.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ───────────── PREREQUISITES ───────────── -->
+      <section id="prerequisites">
+        <h2>2. Prerequisites</h2>
+        <div class="two-col">
+          <div>
+            <h3>Software</h3>
+            <ul>
+              <li>TouchDesigner 2023.11 or newer (Python 3.11)</li>
+              <li>Git (for cloning repos below)</li>
+              <li>Bun runtime — <code>curl -fsSL https://bun.sh/install | bash</code></li>
+            </ul>
+            <h3>Optional Integrations</h3>
+            <ul>
+              <li><strong>TDMorph</strong> — <code>github.com/DarienBrito/TDMorph</code> — free PresetManager.tox</li>
+              <li><strong>EssentiaTD</strong> — <code>github.com/DarienBrito/EssentiaTD</code> — C++ CHOP plugins (Windows, AGPL-3.0)</li>
+              <li><strong>Blackbox AI</strong> — <code>github.com/vj-bunbun/blackbox</code> — provider-agnostic context vault</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Repo Layout on Disk</h3>
+            <pre>10_Claude_Cursor/
+├── TD_NLE/          ← this project
+├── TDMorph/         ← optional
+├── EssentiaTD/      ← optional
+└── blackbox/        ← optional</pre>
+            <div class="callout info">
+              <strong>EssentiaTD Install</strong>
+              Copy the <code>.plugin</code> files from <code>EssentiaTD/Plugins/</code> into your TD Plugins folder. Restart TD. Verify with: <em>Dialogs → Operator Snippets → Search "Essentia"</em>.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ───────────── STRUCTURE ───────────── -->
+      <section id="structure">
+        <h2>3. Repository Structure</h2>
+        <pre>TD_NLE/
+├── model/              ← DAT table headers (single source of truth)
+│   ├── clips_table.txt
+│   ├── tracks_table.txt
+│   ├── notes_table.txt
+│   ├── markers_table.txt
+│   ├── automation_table.txt
+│   ├── transport_settings.txt   ← read by extTransport (fps/bpm/clock)
+│   ├── project_settings.txt     ← project name, export path, template_root
+│   ├── overrides_table.txt      ← per-clip par overrides (inspector snapshots)
+│   ├── analysis_table.txt
+│   └── template_catalog.txt     ← auto-populated by Folder DAT scan
+├── templates/          ← library folders on disk, discovered by Folder DAT
+│   ├── scene3d/        ← 3D generative .tox templates
+│   ├── scene2d/        ← 2D comp / GLSL .tox templates
+│   └── fx/             ← effect processor .tox templates
+├── transport/          ← Time COMP, Timeline CHOP, Timecode CHOP
+├── players/            ← fixed shell families (never dynamically created)
+│   ├── scene3d/        ← scene3d_shell_1..N
+│   ├── scene2d/        ← scene2d_shell_1..N
+│   ├── fx/             ← fx_shell_1..N
+│   └── media/          ← video_slot_1..N, audio_slot_1..N
+├── mix/                ← Layer Mix TOP, program_out, record_out
+├── audio/              ← Audio File In CHOP + analysis/
+├── ui/                 ← transport_bar, rulers, track_headers, canvases, inspector
+├── record/             ← burnin_optional, moviefileout1
+├── io/                 ← extIO: JSON project read/write, Folder DAT browser
+├── tox/                ← TEMPLATE_SCENE.tox starter template
+├── editor/             ← editor state DATs (editor_state, media_bin, transport_controls…)
+├── scripts/            ← all 6 Python extensions
+│   ├── extTransport.py
+│   ├── extSequencer.py
+│   ├── extPlayerPool.py
+│   ├── extAnalysis.py
+│   ├── extRecorder.py
+│   ├── extIngest.py
+│   ├── clip_canvas_callbacks.py
+│   ├── dropzone_callbacks.py
+│   ├── editor_state_utils.py
+│   ├── timeline_ruler_callbacks.py
+│   └── transport_bar_actions.py
+└── project_files/      ← TD_NLE_.toe (main), Backup/ (gitignored)</pre>
+
+        <div class="callout info">
+          <strong>Root COMP</strong>
+          Everything lives under <code>/timeline_system</code>. All 6 extensions are promoted on this COMP so they're accessible as <code>op('/timeline_system').ext.extTransport</code> etc.
+        </div>
+      </section>
+
+      <!-- ───────────── SCHEMAS ───────────── -->
+      <section id="schemas">
+        <h2>4. DAT Table Schemas</h2>
+        <p class="lead">All DAT files live in <code>model/</code>. Import each via File DAT pointing to the .txt header, then switch to <em>Reload Always</em> or use a Table DAT for runtime edits.</p>
+
+        <h3>clips_table (23 columns)</h3>
+        <pre>id  track  template_path  shell_type  subcomp  start_frame  duration_frames
+start_tc  end_tc  in_offset  out_offset  opacity  blend_mode
+transition_in  transition_out  preroll_frames  enabled
+overrides_json  media_type  source_in  source_out  fps  preset_name</pre>
+        <table>
+          <thead><tr><th>Column</th><th>Type</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><code>template_path</code></td><td>str</td><td>Path to .tox template or media file on disk</td></tr>
+            <tr><td><code>shell_type</code></td><td>str</td><td><code>scene3d | scene2d | fx | video | audio</code> — which shell family to use</td></tr>
+            <tr><td><code>subcomp</code></td><td>str</td><td>Optional sub-component name within the .tox</td></tr>
+            <tr><td><code>overrides_json</code></td><td>JSON</td><td><code>{"ParName": value}</code> pushed into shell on load. Template owns everything else.</td></tr>
+            <tr><td><code>media_type</code></td><td>str</td><td>Content kind: <code>tox | video | audio</code></td></tr>
+            <tr><td><code>source_in</code></td><td>int</td><td>Trim head — frame offset into source file. 0 = no trim.</td></tr>
+            <tr><td><code>source_out</code></td><td>int</td><td>Trim tail — frame offset. -1 = full file.</td></tr>
+            <tr><td><code>fps</code></td><td>float</td><td>Source media FPS. 0 = use project FPS.</td></tr>
+            <tr><td><code>preset_name</code></td><td>str</td><td>TDMorph preset to apply on clip load via <code>PresetManager.JumpToPreset()</code></td></tr>
+          </tbody>
+        </table>
+
+        <h3>tracks_table</h3>
+        <pre>track  type  name  mute  solo  color  height</pre>
+
+        <h3>notes_table</h3>
+        <pre>id  lane  start_frame  duration_frames  start_tc  velocity  event_type  target  value  params_json</pre>
+        <p class="mini"><strong>event_type values:</strong> <code>scene_launch</code>, <code>trigger</code>, <code>blend_mode</code>, <code>par_set</code>, <code>morph_preset</code>, <code>jump_preset</code>, <code>random_morph</code>, <code>preset_sequence</code>, <code>osc</code>, <code>midi_note</code></p>
+
+        <h3>transport_settings (read by extTransport)</h3>
+        <pre>key              value
+clock_source     internal
+fps              30
+tc_offset        00:00:00:00
+bpm              120
+signature_num    4
+signature_den    4
+loop_start_frame 0
+loop_end_frame   900
+loop_enabled     0
+external_seconds_offset  0.0</pre>
+
+        <h3>project_settings</h3>
+        <pre>key           value
+project_name  untitled
+version       1
+export_path
+template_root
+last_saved</pre>
+        <p class="mini"><code>template_root</code> is the directory the file picker opens to when using Browse buttons. Set it once per project.</p>
+
+        <h3>overrides_table (inspector snapshots)</h3>
+        <pre>id  clip_id  par_name  par_value  par_type</pre>
+        <p class="mini"><code>par_type</code> matches the Style column from Parameter DAT: <code>Float</code>, <code>Int</code>, <code>Toggle</code>, <code>Str</code>, <code>Menu</code>. Populated by the inspector when the user captures a snapshot via Parameter DAT (Custom pars only).</p>
+
+        <h3>template_catalog (auto-populated by Folder DAT)</h3>
+        <pre>template_path  name  shell_type  tags  description  folder</pre>
+        <p class="mini">Folder DAT scans <code>templates/scene3d/</code>, <code>templates/scene2d/</code>, <code>templates/fx/</code>. <code>shell_type</code> is derived from the subfolder name. Sidecar <code>.json</code> metadata files in each template folder can provide tags and descriptions.</p>
+
+        <h3>analysis_table</h3>
+        <pre>frame  tc  beat  bar  onset_strength  phrase_id  note_guess  bpm_confidence</pre>
+
+        <h3>markers_table</h3>
+        <pre>frame  tc  kind  label  strength</pre>
+      </section>
+
+      <!-- ───────────── SHELL CONTRACTS ───────────── -->
+      <section id="shells">
+        <h2>5. Shell Contracts</h2>
+        <p class="lead">All scene shells (scene3d, scene2d, fx) use <strong>Engine COMP</strong> internally to isolate each .tox in a separate TouchEngine process. Video and audio shells use Movie File In TOP and Audio File In CHOP respectively.</p>
+
+        <div class="callout warning">
+          <strong>Engine COMP Key Points</strong>
+          Clock Mode = Synchronized. Load on Demand = On. Reload on Crash = On. Custom parameters on the .tox surface as Engine COMP parameters — parameter direction is host → engine only. <code>onStart()</code>/<code>onExit()</code> never fire under TouchEngine; use <code>onCreate()</code> for init.
+        </div>
+
+        <h3>Required Custom Parameters — All Shells</h3>
+        <table>
+          <thead><tr><th>Par Name</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>Active</code></td><td>toggle</td><td>Yes</td><td>Enable/disable cooking</td></tr>
+            <tr><td><code>Bypassrender</code></td><td>toggle</td><td>Yes</td><td>Skip render when off-screen (opacity=0)</td></tr>
+            <tr><td><code>Localtime</code></td><td>float</td><td>Yes</td><td>Current clip time in seconds</td></tr>
+            <tr><td><code>Clipprogress</code></td><td>float</td><td>Yes</td><td>0–1 normalized progress within clip</td></tr>
+            <tr><td><code>Opacity</code></td><td>float</td><td>Yes</td><td>Master opacity (0–1)</td></tr>
+            <tr><td><code>Seed</code></td><td>int</td><td>Yes</td><td>Randomization seed</td></tr>
+            <tr><td><code>Prewarm</code></td><td>toggle</td><td>Optional</td><td>Pre-warm on preroll before clip start</td></tr>
+            <tr><td><code>AudioReactive</code></td><td>float</td><td>Optional</td><td>Audio reactivity amount (0–1)</td></tr>
+            <tr><td><code>BlendHint</code></td><td>menu</td><td>Optional</td><td>Suggested blend mode for Layer Mix</td></tr>
+            <tr><td><code>OUT_TOP</code></td><td>Null TOP output</td><td>Yes</td><td>Final visual output. Black for audio clips.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="three-col">
+          <div class="card">
+            <h4><span class="pill green">scene3d</span></h4>
+            <p class="mini">3D generative scenes. Engine COMP loads .tox. Internal network: Geometry, Render TOP, Camera COMP, Light COMP → OUT_TOP.</p>
+            <p class="mini">Optional extra pars: <code>Camera</code> (str), <code>Geometry</code> (str).</p>
+          </div>
+          <div class="card">
+            <h4><span class="pill blue">scene2d</span></h4>
+            <p class="mini">2D comp / GLSL / generative. Engine COMP loads .tox. Internal network: any 2D pipeline → OUT_TOP.</p>
+            <p class="mini">Optional extra pars: <code>Resolution</code> (menu).</p>
+          </div>
+          <div class="card">
+            <h4><span class="pill orange">fx</span></h4>
+            <p class="mini">Effect processors that take an input TOP. Internal network: <code>in1</code> wired input or <code>InputPath</code> (str) → effect chain → OUT_TOP.</p>
+            <p class="mini">Required extra pars: <code>Amount</code> (float 0–1), <code>Mode</code> (menu).</p>
+          </div>
+        </div>
+
+        <h3>Internal Structure — Each Player Shell</h3>
+        <table>
+          <thead><tr><th>Node name</th><th>Type</th><th>Config</th></tr></thead>
+          <tbody>
+            <tr><td><code>engine_comp</code></td><td>Engine COMP (or Base COMP)</td><td>External .tox loader. Clock Mode = Synchronized. Surfaces Active, Localtime, Clipprogress, Opacity, Seed, Bypassrender.</td></tr>
+            <tr><td><code>movie_filein</code></td><td>Movie File In TOP</td><td>Play Mode = Specify Index. Index Unit = Seconds. Active = Off initially. Used by video slots.</td></tr>
+            <tr><td><code>audio_filein</code></td><td>Audio File In CHOP</td><td>Play Mode = Specify Index. Index Unit = Seconds. Active = Off initially. Used by audio slots.</td></tr>
+            <tr><td><code>out_select_top</code></td><td>Switch TOP</td><td>Input 0 = engine_comp OUT_TOP, Input 1 = movie_filein. Par name: <code>Input</code> (capital I).</td></tr>
+            <tr><td><code>OUT_TOP</code></td><td>Null TOP</td><td>Stable output referenced by <code>extPlayerPool.PlayerTOP(visual_index)</code>.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Shell Save / Reload Workflow</h3>
+        <ul>
+          <li><strong>Save Template:</strong> RMB → Save Component on the loaded external .tox inside the shell. Never triggered automatically by the timeline.</li>
+          <li><strong>Reload Template:</strong> Pulse the <em>Enable External .tox</em> parameter on the shell's Engine COMP, or call <code>extPlayerPool._reloadShell(slot_index)</code>.</li>
+          <li><strong>Open Network:</strong> See <a href="#opennetwork">Section 12</a> — uses <code>ui.panes.createFloating()</code>.</li>
+        </ul>
+      </section>
+
+      <!-- ───────────── EXTENSIONS ───────────── -->
+      <section id="extensions">
+        <h2>6. Python Extensions</h2>
+        <p>All six extensions are promoted on <code>/timeline_system</code>. Each lives in <code>scripts/</code> as a .py file — paste into a Text DAT, set as extension, promote.</p>
+
+        <table>
+          <thead><tr><th>Extension</th><th>Responsibility</th><th>Key Public Methods</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><code>extTransport</code></td>
+              <td>4 clock modes — internal, SMPTE, beat/BPM, scrub. Reads <code>transport_settings</code>.</td>
+              <td><code>CurrentFrame()</code>, <code>Play()</code>, <code>Pause()</code>, <code>Stop()</code>, <code>GoToFrame(f)</code>, <code>FrameToTc(f)</code>, <code>SetLoop(start, end, enabled)</code>, <code>SetClockSource(mode)</code></td>
+            </tr>
+            <tr>
+              <td><code>extPlayerPool</code></td>
+              <td>Assigns clips to shell slots by <code>shell_type</code>. Drives all shell parameters each frame. Handles preroll.</td>
+              <td><code>Update(frame)</code>, <code>PlayerTOP(visual_index)</code>, <code>ActivePlayerTOPs()</code>, <code>ActiveAudioCHOPs()</code>, <code>DebugStatus()</code></td>
+            </tr>
+            <tr>
+              <td><code>extSequencer</code></td>
+              <td>Per-frame tick loop. Evaluates notes, samples automation, updates Layer Mix.</td>
+              <td><code>Tick()</code>, <code>ActiveNotes()</code>, <code>ClipAtFrame(f, track)</code></td>
+            </tr>
+            <tr>
+              <td><code>extIngest</code></td>
+              <td>File type detection, media probing, clips_table row creation. Drag-and-drop and file-picker ingest.</td>
+              <td><code>IngestFile(path, track, start_frame, shell_type)</code>, <code>BrowseAndIngest(track, start_frame, shell_type)</code>, <code>SetClipShellType(clip_id, shell_type)</code></td>
+            </tr>
+            <tr>
+              <td><code>extAnalysis</code></td>
+              <td>Offline audio analysis pipeline. Triggers EssentiaTD batch CHOPs, harvests results, writes analysis_table + markers_table.</td>
+              <td><code>Analyze(path)</code>, <code>ClearAnalysis()</code></td>
+            </tr>
+            <tr>
+              <td><code>extRecorder</code></td>
+              <td>Program output capture via Movie File Out TOP. Three record modes.</td>
+              <td><code>StartRecord()</code>, <code>StopRecord()</code>, <code>ToggleRecord(mode)</code>, <code>ExportRange(start, end)</code>, <code>UpdateBurnin(f)</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Helper Script Modules</h3>
+        <table>
+          <thead><tr><th>Module</th><th>Role</th></tr></thead>
+          <tbody>
+            <tr><td><code>editor_state_utils</code></td><td>Viewport math (x↔frame, y↔track), zoom/pan, clip rect computation, selection state — all backed by <code>editor/editor_state</code> DAT.</td></tr>
+            <tr><td><code>clip_canvas_callbacks</code></td><td>Drop, hover, selection, marquee, move, home-to-fit, <code>BrowseTox(shell_type)</code>, <code>ChangeShellType(clip_id, shell_type)</code>.</td></tr>
+            <tr><td><code>dropzone_callbacks</code></td><td>Thin delegate to <code>clip_canvas_callbacks.onDropItems()</code>. Wire to clip_canvas Callbacks DAT.</td></tr>
+            <tr><td><code>timeline_ruler_callbacks</code></td><td><code>BuildTickMarks()</code>, playhead scrub, zoom/pan, hover — called from ruler panel.</td></tr>
+            <tr><td><code>transport_bar_actions</code></td><td><code>RunAction(action)</code> handles play_toggle, stop, record_toggle, zoom, loop, clock source. <code>ReadoutData()</code> returns current transport state dict.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ───────────── WALKTHROUGH ───────────── -->
+      <section id="walkthrough">
+        <h2>7. Build Walkthrough</h2>
+        <p class="lead">Build in this order. Each step is independently testable.</p>
+
+        <h3 id="step-model">Step 1 — Model DATs</h3>
+        <ol>
+          <li>Inside <code>/timeline_system</code>, create a Base COMP named <code>model</code>.</li>
+          <li>For each table in <code>model/*.txt</code>: create a File DAT, point it at the .txt file, set <em>Sync to File → Load on Start</em>. Name each DAT to match its file (<code>clips_table</code>, <code>tracks_table</code>, etc.).</li>
+          <li>For runtime editing, <strong>replace File DATs with Table DATs</strong> initialized from the schema headers. File DATs are read-only.</li>
+          <li>Verify: <code>op('/timeline_system/model/clips_table').numCols</code> → <code>23</code></li>
+        </ol>
+
+        <h3 id="step-transport">Step 2 — Transport</h3>
+        <ol>
+          <li>Create container <code>transport</code> inside <code>/timeline_system</code>.</li>
+          <li>Add a <strong>Time COMP</strong> named <code>local</code>. Set <em>Clock Source → Timeline</em>.</li>
+          <li>Add a <strong>Timeline CHOP</strong> named <code>timeline_master</code>. Connect Time COMP as input.</li>
+          <li>Add a <strong>Timecode CHOP</strong> named <code>timecode_master</code>. Connect Timeline CHOP.</li>
+          <li>Add a Text DAT with <code>extTransport.py</code> contents. On <code>/timeline_system</code> Extensions page, add it as an extension, Promote = On.</li>
+          <li>Verify: <code>op('/timeline_system').ext.extTransport.CurrentFrame()</code> returns current frame number.</li>
+        </ol>
+
+        <h3 id="step-players">Step 3 — Player Shells</h3>
+        <ol>
+          <li>Create container <code>players</code> inside <code>/timeline_system</code>. Inside it, create sub-containers: <code>scene3d</code>, <code>scene2d</code>, <code>fx</code>, <code>media</code>.</li>
+          <li><strong>For each scene3d shell</strong> (start with 2: <code>scene3d_shell_1</code>, <code>scene3d_shell_2</code>):
+            <ul>
+              <li>Inside the shell COMP, add an <strong>Engine COMP</strong> named <code>engine_comp</code>. Set Clock Mode = Synchronized, Load on Demand = On, Reload on Crash = On.</li>
+              <li>Add a <strong>Switch TOP</strong> named <code>out_select_top</code>.</li>
+              <li>Add a <strong>Null TOP</strong> named <code>OUT_TOP</code>. Wire: engine_comp output → Switch TOP input 0 → OUT_TOP.</li>
+              <li>Add custom parameters to the shell COMP: Active (toggle), Bypassrender (toggle), Localtime (float), Clipprogress (float), Opacity (float), Seed (int).</li>
+            </ul>
+          </li>
+          <li>Repeat for <strong>scene2d</strong> and <strong>fx</strong> shells (same structure).</li>
+          <li><strong>For each media slot</strong> (2 video + 2 audio minimum):
+            <ul>
+              <li>Video slot: Engine COMP (off) + <strong>Movie File In TOP</strong> named <code>movie_filein</code> (Play Mode = Specify Index, Index Unit = Seconds) + Switch TOP + Null OUT_TOP.</li>
+              <li>Audio slot: <strong>Audio File In CHOP</strong> named <code>audio_filein</code> (Play Mode = Specify Index, Index Unit = Seconds). No visual output — audio goes to mix bus.</li>
+            </ul>
+          </li>
+        </ol>
+
+        <h3 id="step-extensions">Step 4 — Wire All Extensions</h3>
+        <ol>
+          <li>Create Text DATs in <code>scripts/</code> for each extension. Paste content from the repo .py files.</li>
+          <li>On <code>/timeline_system</code> Extensions page, add all 6 in this order: extTransport, extPlayerPool, extSequencer, extAnalysis, extRecorder, extIngest. Set Promote = On for all.</li>
+          <li>Add a <strong>CHOP Execute DAT</strong> wired to the Timeline CHOP output. In its <code>onValueChange</code> (or use a DAT Execute on the per-frame cook): call <code>op('/timeline_system').ext.extSequencer.Tick()</code>.</li>
+          <li>Verify: <code>op('/timeline_system').ext.extPlayerPool.PoolSize</code> returns your total shell count.</li>
+        </ol>
+
+        <h3 id="step-ingest">Step 5 — Ingest &amp; Browse</h3>
+        <ol>
+          <li>The <code>extIngest</code> extension is already wired (Step 4). Test drag-and-drop by enabling the <em>Drop Files</em> panel parameter on the clip_canvas container.</li>
+          <li>Create a Text DAT named <code>clip_canvas_cbs</code>. Paste <code>clip_canvas_callbacks.py</code>. Wire it as the <em>Callbacks DAT</em> parameter of clip_canvas.</li>
+          <li>Create a File DAT pointing to <code>editor/media_bin.txt</code>. This DAT drives the Browse button rows — one button per row, each calling <code>clip_canvas_callbacks.BrowseTox(shell_type=row['shell_type'])</code>.</li>
+          <li>Set <code>project_settings['template_root','value']</code> to your templates directory. The file picker will open there by default.</li>
+          <li>Test: <code>op('/timeline_system').ext.extIngest.BrowseAndIngest(shell_type='scene3d')</code> → file picker opens → choose a .tox → row appears in clips_table with correct shell_type.</li>
+        </ol>
+
+        <h3 id="step-mix">Step 6 — Layer Mix TOP</h3>
+        <ol>
+          <li>Create container <code>mix</code>. Add a <strong>Layer Mix TOP</strong> named <code>layermix_main</code>.</li>
+          <li>Wire all shell <code>OUT_TOP</code> outputs as inputs to layermix_main (one per visual slot).</li>
+          <li>Add a Null TOP named <code>program_out</code> wired from layermix_main. Add another named <code>record_out</code>.</li>
+          <li><code>extSequencer._updateLayerMix()</code> drives each layer's Opacity and Blend parameters automatically each frame.</li>
+        </ol>
+
+        <h3 id="step-ui">Step 7 — Editor UI</h3>
+        <ol>
+          <li>Create container <code>editor</code>. Import <code>editor/editor_state.txt</code> as a Table DAT (key/value pairs).</li>
+          <li>Import <code>editor/transport_controls.txt</code> and <code>editor/media_bin.txt</code> as Table DATs for button layouts.</li>
+          <li>Build Container COMPs for: <code>transport_bar</code>, <code>timeline_ruler</code>, <code>clip_canvas</code>, <code>note_canvas</code>, <code>inspector</code>, <code>track_headers</code>.</li>
+          <li>Wire callback DATs: <code>clip_canvas_callbacks.py</code> → clip_canvas; <code>timeline_ruler_callbacks.py</code> → timeline_ruler; <code>transport_bar_actions.py</code> → transport_bar buttons.</li>
+          <li>All viewport math (zoom, pan, pixel↔frame, track↔y) is handled by <code>editor_state_utils.py</code> — call functions from Panel Execute DATs or button callbacks.</li>
+        </ol>
+      </section>
+
+      <!-- ───────────── INGEST ───────────── -->
+      <section id="ingest">
+        <h2>8. Media Ingest &amp; Browse</h2>
+        <p class="lead">Two paths to add clips: drag-and-drop onto the canvas, or click a Browse button for a specific shell type.</p>
+
+        <div class="two-col">
+          <div>
+            <h3>Drag and Drop</h3>
+            <ol>
+              <li>Enable <em>Drop Files = On</em> on the clip_canvas Container COMP (Panel page).</li>
+              <li>Wire <code>dropzone_callbacks.py</code> as the Callbacks DAT.</li>
+              <li>Drop any supported file — .tox, .mp4, .mov, .wav, .aif, etc.</li>
+              <li><code>extIngest._detectShellType()</code> infers shell type from folder path conventions:<br>
+                <code>/fx/</code> or <code>/fx_</code> or <code>effect</code> → <code>fx</code><br>
+                <code>/2d/</code> or <code>scene2d</code> or <code>/comp/</code> → <code>scene2d</code><br>
+                everything else → <code>scene3d</code> (default)</li>
+            </ol>
+          </div>
+          <div>
+            <h3>Browse Buttons (media_bin.txt)</h3>
+            <p class="mini">Each row in <code>editor/media_bin.txt</code> drives one button:</p>
+            <table>
+              <thead><tr><th>Label</th><th>shell_type</th><th>File Types</th></tr></thead>
+              <tbody>
+                <tr><td>Browse Scene 3D</td><td><code>scene3d</code></td><td>.tox .toe</td></tr>
+                <tr><td>Browse Scene 2D</td><td><code>scene2d</code></td><td>.tox .toe</td></tr>
+                <tr><td>Browse FX</td><td><code>fx</code></td><td>.tox .toe</td></tr>
+                <tr><td>Browse Video</td><td><code>video</code></td><td>.mp4 .mov .avi .webm .gif</td></tr>
+                <tr><td>Browse Audio</td><td><code>audio</code></td><td>.wav .aif .aiff .mp3 .flac .m4a</td></tr>
+              </tbody>
+            </table>
+            <p class="mini">Button callback: <code>clip_canvas_callbacks.BrowseTox(shell_type='scene3d')</code></p>
+          </div>
+        </div>
+
+        <h3>Override Shell Type After Ingest</h3>
+        <p>The inspector can change <code>shell_type</code> on any existing clip:</p>
+        <pre>op('/timeline_system').ext.extIngest.SetClipShellType('1', 'scene2d')</pre>
+        <p class="mini">Or from the inspector callback: <code>clip_canvas_callbacks.ChangeShellType(clip_id, shell_type)</code></p>
+
+        <h3>Nondestructive Trim</h3>
+        <p>Source files are never modified. <code>source_in</code> and <code>source_out</code> are stored in the clip row as frame offsets. At playback, <code>extPlayerPool._driveMediaPlayer()</code> converts to seconds and sets <code>movie_filein.par.index</code> or <code>audio_filein.par.index</code>.</p>
+        <pre># video: index is seconds from source start
+source_seconds = source_in_s + local_frame / project_fps
+
+# audio: same conversion (AudioFileIn also uses seconds with indexunit='seconds')
+source_seconds = source_in_s + local_frame / project_fps</pre>
+      </section>
+
+      <!-- ───────────── TDMORPH ───────────── -->
+      <section id="tdmorph">
+        <h2>9. TDMorph Integration</h2>
+        <p class="lead">TDMorph PresetManager.tox lives at <code>/timeline_system/scripts/preset_manager</code>, targeting custom parameters on scene shells. All preset actions are triggered from <code>notes_table</code> event rows.</p>
+
+        <h3>Placement</h3>
+        <ol>
+          <li>Copy <code>TDMorph/PresetManager/PresetManager.tox</code> into <code>scripts/</code>.</li>
+          <li>In TD, drag it into <code>/timeline_system/scripts/</code> as a Base COMP named <code>preset_manager</code>.</li>
+          <li>Point PresetManager's target at the shell COMP custom parameters (Active, Localtime, Opacity, Seed, etc. on player_1..N).</li>
+        </ol>
+
+        <h3>Python API</h3>
+        <pre>pm = op('/timeline_system/scripts/preset_manager')
+pm.StorePreset('scene_a')                                   # save current state
+pm.JumpToPreset('scene_a')                                  # instant — use on clip load
+pm.MorphPreset('scene_a', morphTime=1.5, morphCurve='easeIn')  # smooth morph
+pm.RandomMorph(mode='Uniform')                              # generative
+pm.PresetsSequence(keysSequence=['a', 'b', 'c'])            # sequence</pre>
+
+        <h3>notes_table Event Types</h3>
+        <table>
+          <thead><tr><th>event_type</th><th>target</th><th>value</th><th>params_json</th></tr></thead>
+          <tbody>
+            <tr><td><code>morph_preset</code></td><td>op path to PresetManager</td><td>preset name</td><td><code>{"morphTime": 1.5, "morphCurve": "easeIn"}</code></td></tr>
+            <tr><td><code>jump_preset</code></td><td>op path</td><td>preset name</td><td>—</td></tr>
+            <tr><td><code>random_morph</code></td><td>op path</td><td>mode (e.g. <code>Uniform</code>)</td><td>—</td></tr>
+            <tr><td><code>preset_sequence</code></td><td>op path</td><td>comma-separated preset names</td><td>—</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Patterns Library (algorithmic note generation)</h3>
+        <p class="mini">SuperCollider-style generators inside PresetManager.tox — generate note rows algorithmically:</p>
+        <ul class="mini">
+          <li><code>Pseq(seq, repeats)</code> — ordered sequence</li>
+          <li><code>Prand(seq, repeats)</code> — random pick</li>
+          <li><code>Pxrand(seq, repeats)</code> — random, no consecutive repeats</li>
+          <li><code>Pwrand(seq, weights, repeats)</code> — weighted random</li>
+          <li><code>Pbrown(lo, hi, step)</code> — brownian walk (good for morph times)</li>
+          <li><code>Pwhite(lo, hi)</code> — uniform random float</li>
+        </ul>
+
+        <div class="callout info">
+          <strong>PresetAnimator → Automation Lanes</strong>
+          <code>PresetAnimator.CreateAnimation()</code> bakes presets into an Animation COMP. That feeds the existing lane_{id} Keyframe CHOP pipeline in <code>extSequencer._sampleAutomation()</code>.
+        </div>
+      </section>
+
+      <!-- ───────────── ESSENTIA ───────────── -->
+      <section id="essentia">
+        <h2>10. EssentiaTD Integration</h2>
+        <p class="lead">Five C++ CHOP plugins for batch audio analysis. Primary workflow is offline — analyze once, cache results to DATs, use during playback with zero overhead.</p>
+
+        <h3>CHOP Plugin Suite</h3>
+        <table>
+          <thead><tr><th>Plugin</th><th>Output Channels</th><th>Use Case</th></tr></thead>
+          <tbody>
+            <tr><td>Essentia Spectrum</td><td>Frequency spectrum bins</td><td>Visual frequency response</td></tr>
+            <tr><td>Essentia Spectral</td><td>centroid, spread, flux, rolloff, contrast</td><td>Timbral descriptors</td></tr>
+            <tr><td>Essentia Tonal</td><td>key, key_scale, key_strength, chords</td><td>Harmonic analysis → <code>analysis_table</code></td></tr>
+            <tr><td>Essentia Rhythm</td><td>bpm, beat_phase (sawtooth 0→1), beat_confidence</td><td>BPM detection, beat tracking → markers</td></tr>
+            <tr><td>Essentia Loudness</td><td>loudness_db, loudness_range, momentary, integrated</td><td>Dynamic range analysis</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Batch Workflow</h3>
+        <ol>
+          <li>User calls <code>extAnalysis.Analyze(path)</code> (or drops audio onto a designated analysis zone).</li>
+          <li>EssentiaTD CHOPs run in a background thread — file loaded, all CHOPs cook once in batch mode (<code>par.timeslice = False</code>).</li>
+          <li>Results harvested: <code>_harvestRhythm()</code>, <code>_harvestLoudness()</code>, <code>_harvestTonal()</code>.</li>
+          <li>Written to <code>model/analysis_table</code> (per-frame) and <code>model/markers_table</code> (beat/phrase positions).</li>
+          <li>Fallback chain: EssentiaTD → Palette audioAnalysis → manual markers.</li>
+        </ol>
+
+        <h3>beat_phase for Visual Sync</h3>
+        <pre># Essentia Rhythm CHOP outputs beat_phase as a sawtooth 0.0 → 1.0 per beat
+beat_phase_val = op('essentia_rhythm')['beat_phase'][0]   # 0.0 to 1.0 this beat
+# Use as modulation source for shader uniforms or TDMorph morph blend</pre>
+
+        <h3>analysis_table → notes_table (suggested workflow)</h3>
+        <p class="mini">After analysis, the beat/onset positions in <code>markers_table</code> can be converted to <code>notes_table</code> rows (event_type = <code>trigger</code> or <code>morph_preset</code>) to sync visual events to detected beats.</p>
+      </section>
+
+      <!-- ───────────── IO / SAVE ───────────── -->
+      <section id="iosave">
+        <h2>11. Project &amp; Template Save</h2>
+
+        <div class="callout canonical">
+          <strong>Key Principle</strong>
+          Project save captures <em>references and overrides</em>, never scene internals. Template save is deliberate and local to the template being authored.
+        </div>
+
+        <div class="two-col">
+          <div>
+            <h3>Save Project</h3>
+            <p class="mini">Captures: clip rows, tracks, notes, markers, transport settings, selected templates, parameter overrides.</p>
+            <ul class="mini">
+              <li><strong>.toe</strong> — full TouchDesigner session (networks, wiring)</li>
+              <li><strong>project.json sidecar</strong> — portable timeline state. Written by <code>extIO.SaveProject(path)</code> using File Out DAT or Python <code>json.dumps()</code>. JSON DAT can re-import it.</li>
+            </ul>
+            <pre>extIO.SaveProject('project.json')
+extIO.LoadProject('project.json')</pre>
+          </div>
+          <div>
+            <h3>Save Template</h3>
+            <p class="mini">Author edits the loaded .tox inside a shell in the TD network editor, then saves explicitly:</p>
+            <ul class="mini">
+              <li><strong>RMB → Save Component</strong> on the loaded sub-COMP inside the Engine COMP</li>
+              <li>Or via Python: <code>comp.save(path)</code></li>
+              <li>Never auto-saved when the timeline changes — templates are permanent assets</li>
+            </ul>
+            <h3>Reload Template</h3>
+            <pre># Pulse the Engine COMP's external tox reload
+engine = op('/timeline_system/players/scene3d/scene3d_shell_1/engine_comp')
+engine.par.reloadpulse.pulse()
+# or via extPlayerPool:
+ext.extPlayerPool._reloadShell(slot_index)</pre>
+          </div>
+        </div>
+
+        <h3>IO Subsystem (<code>/timeline_system/io/</code>)</h3>
+        <p>The <code>io/</code> container handles:</p>
+        <ul>
+          <li><strong>Folder DAT</strong> — scans <code>templates/scene3d/</code>, <code>templates/scene2d/</code>, <code>templates/fx/</code> and populates <code>template_catalog</code> DAT. Set <em>Active = On</em>, <em>Include Subfolders = Off</em>, filter by <code>.tox</code> extension.</li>
+          <li><strong>JSON DAT</strong> — parses loaded project.json sidecar into a table (Output Format = Table, list-of-dicts → one row per clip).</li>
+          <li><strong>File Out DAT</strong> — writes DAT contents to disk on save. Set <code>par.file</code> to the sidecar path, pulse <code>par.write</code>.</li>
+        </ul>
+        <pre># Folder DAT output columns (auto):
+# Name, Base Name, Extension, Type, Size, Depth, Folder, Path, Relative Path, Date Modified…
+# shell_type is derived by the catalog scanner from the subfolder name</pre>
+      </section>
+
+      <!-- ───────────── OPEN NETWORK ───────────── -->
+      <section id="opennetwork">
+        <h2>12. Open Network Button</h2>
+        <p class="lead">The inspector can open the currently loaded template in a floating network editor pane — enabling live in-place editing without leaving the timeline flow.</p>
+
+        <pre>def OpenNetwork(comp_path):
+    """Open a floating Network Editor pane pointing at the given COMP."""
+    target = op(comp_path)
+    if target is None:
+        return
+    pane = ui.panes.createFloating(
+        type=PaneType.NETWORKEDITOR,
+        name='TD_NLE — ' + target.name,
+        maxWidth=1600,
+        maxHeight=900,
+    )
+    pane.owner = target</pre>
+
+        <p>Call this from the inspector's <em>Open Network</em> button with the path to the Engine COMP's loaded sub-component:</p>
+        <pre># Example: open the scene currently loaded in shell 1
+shell = op('/timeline_system/players/scene3d/scene3d_shell_1')
+engine = shell.op('engine_comp')
+# Point at the loaded .tox network inside the engine process
+OpenNetwork(engine.path)</pre>
+
+        <div class="callout info">
+          <strong>Panes API Reference</strong>
+          <code>ui.panes.current</code> — active pane. <code>pane.owner</code> — sets the COMP the pane points to. <code>ui.panes.createFloating(type, name, maxWidth, maxHeight)</code> — returns a Pane object.
+        </div>
+      </section>
+
+      <!-- ───────────── PLAYBACK RULES ───────────── -->
+      <section id="playback">
+        <h2>13. Playback Rules</h2>
+        <p class="lead">These rules run every frame inside <code>extSequencer.Tick()</code>.</p>
+        <ol>
+          <li>Resolve current frame <code>f</code> from <code>extTransport.CurrentFrame()</code>.</li>
+          <li>Build track filter from tracks_table mute/solo state.</li>
+          <li><code>extPlayerPool.Update(f, clip_filter)</code> — assigns active clips to shells by shell_type, drives parameters, handles preroll and unload.</li>
+          <li><code>_evaluateNotes(f)</code> — finds all notes where <code>start_frame ≤ f &lt; end_frame</code>. Fires <code>_fireNote()</code> on the frame equal to start_frame.</li>
+          <li><code>_sampleAutomation(f)</code> — reads lane_{id} Keyframe CHOPs, writes parameter values to target OPs.</li>
+          <li><code>_updateLayerMix()</code> — sets Opacity and Blend on each Layer Mix TOP layer from active assignments.</li>
+          <li>If recorder is active, call <code>extRecorder.UpdateBurnin(f)</code>.</li>
+        </ol>
+
+        <h3>Shell Assignment Logic</h3>
+        <p class="mini">extPlayerPool maps <code>shell_type</code> to a shell pool. Within a pool, it finds the first free slot. If no free slot exists, it logs and skips (increase shell count to raise polyphony).</p>
+        <table>
+          <thead><tr><th>shell_type</th><th>Pool</th><th>Fallback</th></tr></thead>
+          <tbody>
+            <tr><td><code>scene3d</code></td><td>players/scene3d/</td><td>none — increase shell count</td></tr>
+            <tr><td><code>scene2d</code></td><td>players/scene2d/</td><td>none</td></tr>
+            <tr><td><code>fx</code></td><td>players/fx/</td><td>none</td></tr>
+            <tr><td><code>video</code></td><td>players/media/ (video slots)</td><td>none</td></tr>
+            <tr><td><code>audio</code></td><td>players/media/ (audio slots)</td><td>none</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Preroll</h3>
+        <p class="mini">If a clip has <code>preroll_frames &gt; 0</code>, the shell is loaded and <code>Prewarm = True</code> is set before the clip start frame. This warms the GPU resources so the clip is ready exactly at start. Preroll clips do not appear in Layer Mix output (Opacity = 0).</p>
+      </section>
+
+      <!-- ───────────── VALIDATION ───────────── -->
+      <section id="validation">
+        <h2>14. Validation Checkpoints</h2>
+        <p>Run these in the TD Textport after each build step.</p>
+
+        <h4>Model</h4>
+        <pre>op('/timeline_system/model/clips_table').numCols  # → 23
+op('/timeline_system/model/transport_settings').numRows  # → 11 (header + 10 keys)</pre>
+
+        <h4>Transport</h4>
+        <pre>ext.extTransport.CurrentFrame()   # → current frame int
+ext.extTransport.FrameToTc(0)     # → '00:00:00:00'
+ext.extTransport.Fps              # → 30.0</pre>
+
+        <h4>Player Pool</h4>
+        <pre>ext.extPlayerPool.PoolSize         # → total shell count
+print(ext.extPlayerPool.DebugStatus())  # → slot assignment table</pre>
+
+        <h4>Ingest</h4>
+        <pre># Test tox ingest (adjust path)
+ext.extIngest.IngestFile('C:/my_template.tox')
+op('/timeline_system/model/clips_table').numRows  # → 2 (header + 1 clip)
+
+# Verify shell_type auto-detection
+row = op('/timeline_system/model/clips_table')[1, 'shell_type']
+print(row.val)  # → 'scene3d' (or detected type)
+
+# Test browse (opens file picker)
+ext.extIngest.BrowseAndIngest(shell_type='scene2d')</pre>
+
+        <h4>Shell Load</h4>
+        <pre>ext.extSequencer.Tick()  # drive one frame manually
+ext.extPlayerPool.ActivePlayerTOPs()  # → list of active OUT_TOPs</pre>
+
+        <h4>TDMorph (if installed)</h4>
+        <pre>pm = op('/timeline_system/scripts/preset_manager')
+pm.StorePreset('test_a')
+pm.JumpToPreset('test_a')   # no error = wired correctly</pre>
+
+        <h4>EssentiaTD (if installed)</h4>
+        <pre>ext.extAnalysis.Analyze('C:/audio.wav')
+op('/timeline_system/model/analysis_table').numRows  # → &gt; 1 after analysis</pre>
+      </section>
+
+      <!-- ───────────── NEXT PHASES ───────────── -->
+      <section id="next">
+        <h2>15. Next Phases</h2>
+
+        <div class="cards">
+          <div class="card">
+            <div class="pill-row"><span class="pill blue">Phase 1</span></div>
+            <h4>extIO — Project Save/Load</h4>
+            <p class="mini">JSON sidecar read/write. Folder DAT template_catalog scanner. File Out DAT export. Load project from JSON → populate all model DATs.</p>
+          </div>
+          <div class="card">
+            <div class="pill-row"><span class="pill blue">Phase 1</span></div>
+            <h4>Inspector — Overrides</h4>
+            <p class="mini">Parameter DAT (Custom pars only) on selected shell. Snapshot to overrides_table. Two-column key/value inspector panel driven by overrides_table rows.</p>
+          </div>
+          <div class="card">
+            <div class="pill-row"><span class="pill blue">Phase 1</span></div>
+            <h4>Clip Canvas — Full UI</h4>
+            <p class="mini">GLSL TOP rendering clip blocks from visible_clip_rects(). Trim handle drag → update source_in/source_out. Playhead scrub. Beat snap.</p>
+          </div>
+          <div class="card">
+            <div class="pill-row"><span class="pill orange">Phase 2</span></div>
+            <h4>Music-Aware Sequencing</h4>
+            <p class="mini">Beat/bar ruler. Note lanes. Snap to beat/bar/marker. EssentiaTD beats → note rows. TDMorph Patterns for algorithmic generation.</p>
+          </div>
+          <div class="card">
+            <div class="pill-row"><span class="pill orange">Phase 2</span></div>
+            <h4>SMPTE Chase Mode</h4>
+            <p class="mini">Timecode CHOP in chase mode. Hard chase (jump) and soft chase (smooth). Pre-roll warmup.</p>
+          </div>
+          <div class="card">
+            <div class="pill-row"><span class="pill orange">Phase 3</span></div>
+            <h4>Automation Lanes</h4>
+            <p class="mini">Animation COMP + Keyframe CHOP per lane. PresetAnimator bake → lane CHOPs. Drawn curves in the automation canvas.</p>
+          </div>
+          <div class="card">
+            <div class="pill-row"><span class="pill orange">Phase 3</span></div>
+            <h4>Record &amp; Export</h4>
+            <p class="mini">Movie File Out TOP in review/master/sequence modes. Timecode burn-in overlay. Range export via extRecorder.ExportRange().</p>
+          </div>
+          <div class="card">
+            <div class="pill-row"><span class="pill purple">Later</span></div>
+            <h4>Template Browser Thumbnails</h4>
+            <p class="mini">Replicator COMP (admin tool only) generates thumbnail renders of each template. Results stored alongside template_catalog DAT.</p>
+          </div>
+        </div>
+
+        <hr>
+        <p class="footer-note">GitHub: <a href="https://github.com/coleworldla/TD_NLE">github.com/coleworldla/TD_NLE</a> &nbsp;·&nbsp; TouchDesigner docs: <a href="https://docs.derivative.ca">docs.derivative.ca</a></p>
+      </section>
+
+    </main>
+  </div><!-- .layout -->
+</div><!-- .page -->
 </body>
 </html>
