@@ -1,0 +1,6 @@
+order	label	action	shell_type	file_types
+10	Browse Scene 3D	browse_tox	scene3d	.tox .toe
+20	Browse Scene 2D	browse_tox	scene2d	.tox .toe
+30	Browse FX	browse_tox	fx	.tox .toe
+40	Browse Video	browse_video	video	.mp4 .mov .avi .webm .gif
+50	Browse Audio	browse_audio	audio	.wav .aif .aiff .mp3 .flac .m4a

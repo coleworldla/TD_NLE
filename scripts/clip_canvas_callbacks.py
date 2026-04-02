@@ -106,6 +106,30 @@ def HomeToFit():
     return utils.home_to_fit()
 
 
+def BrowseTox(track=None, start_frame=None, shell_type='scene3d'):
+    """Open a file picker for the given shell_type and ingest the result.
+
+    Called by Browse buttons in the media bin UI. shell_type must be one of:
+    'scene3d', 'scene2d', 'fx', 'video', 'audio'.
+    """
+    ingest = _ingest()
+    utils = _utils()
+    if ingest is None:
+        return None
+    if start_frame is None and utils is not None:
+        start_frame = utils.read_int('hover_frame', 0)
+    return ingest.BrowseAndIngest(track=track, start_frame=start_frame,
+                                  shell_type=shell_type)
+
+
+def ChangeShellType(clip_id, shell_type):
+    """Change the shell_type of an existing clip — called from the inspector."""
+    ingest = _ingest()
+    if ingest is None:
+        return False
+    return ingest.SetClipShellType(clip_id, shell_type)
+
+
 def _itemPath(item):
     for attr in ('location', 'path', 'filePath'):
         if hasattr(item, attr):

@@ -1,0 +1,9 @@
+feat: custom tox browse + shell type selector
+
+- extIngest.IngestFile() accepts optional shell_type override
+- extIngest.BrowseAndIngest() opens ui.chooseFile() picker
+- extIngest.SetClipShellType() lets inspector change shell_type on any clip
+- clip_canvas_callbacks: BrowseTox(shell_type=) and ChangeShellType()
+- editor/media_bin.txt: Browse buttons for scene3d, scene2d, fx, video, audio
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>

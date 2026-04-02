@@ -32,7 +32,7 @@ class extIngest:
     def Transport(self):
         return getattr(self.ownerComp.ext, 'extTransport', None)
 
-    def IngestFile(self, path, track=None, start_frame=None):
+    def IngestFile(self, path, track=None, start_frame=None, shell_type=None):
         normalized_path = os.path.normpath(path)
         media_type = self._detectType(normalized_path)
         if media_type is None:
@@ -45,7 +45,8 @@ class extIngest:
         if start_frame is None:
             start_frame = self._placeAtEnd(track)
 
-        shell_type = self._detectShellType(media_type, normalized_path)
+        detected = self._detectShellType(media_type, normalized_path)
+        shell_type = shell_type if shell_type else detected
 
         if media_type == 'video':
             duration_frames, fps = self._probeVideo(normalized_path, project_fps)
@@ -66,6 +67,38 @@ class extIngest:
             source_in=0,
             source_out=-1,
         )
+
+    def BrowseAndIngest(self, track=None, start_frame=None, shell_type='scene3d'):
+        """Open a file picker and ingest the chosen file with the given shell_type."""
+        path = ui.chooseFile(
+            load=True,
+            start=self._templateRoot() or '.',
+            fileTypes=['.tox', '.toe', '.mp4', '.mov', '.avi', '.webm', '.gif',
+                       '.wav', '.aif', '.aiff', '.mp3', '.flac', '.m4a'],
+            title='Select Template or Media File',
+        )
+        if not path:
+            return None
+        return self.IngestFile(path=path, track=track, start_frame=start_frame,
+                               shell_type=shell_type)
+
+    def SetClipShellType(self, clip_id, shell_type):
+        """Change the shell_type of an existing clip row (called from inspector)."""
+        dat = self.ClipsDAT
+        if dat is None:
+            return False
+        for row in range(1, dat.numRows):
+            if str(dat[row, 'id']) == str(clip_id):
+                dat[row, 'shell_type'] = shell_type
+                return True
+        return False
+
+    def _templateRoot(self):
+        settings = self.ownerComp.op('model/project_settings')
+        if settings is None:
+            return ''
+        cell = settings['template_root', 'value']
+        return str(cell.val) if cell is not None else ''
 
     def _detectShellType(self, media_type, path):
         if media_type == 'video':
